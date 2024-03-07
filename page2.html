@@ -2,8 +2,10 @@
     <head>
         <title>page2</title>
         <link rel="stylesheet" href="css/style-page1.css"> <!-- CSS -->
-        
+
     </head>
+
+
     <body>
         <script src="script.js"></script> <!-- JS -->
 
@@ -21,10 +23,27 @@
             <option value="images/S__61104136_0.jpg">4 Cheese & Bacon</option>
         </select>
         <br><br>
+
         <img id="selectedImage" src="images/PIZZA.jpg" alt="Selected Image">
         <br><br>
+
         <h1 class="size">size</h1>
-        <br><br>
-        <input type="image" class="S"> S
+        
+        <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
+        <label for="size-s">S</label>
+        <input type="radio" class="size-s" id="size-S" name="size" value="S" required>
+        <label for="size-m">M</label>
+        <input type="radio" id="size-M" name="size" value="M" required>
+        <label for="size-L">L</label>
+        <input type="radio" id="size-L" name="size" value="L" required>
+        <br>
+
+        <h1>เลือกขอบ</h1>
+        <select class="edge">
+            <option>ขอบหนานุ่ม</option>
+            <option>บางกรอบ</option>
+            <option>ขอบชีส</option>
+            <option>ขอบไส้กรอกชีส</option>
+        </select>
     </body>
 <!DOCTYPE html>
