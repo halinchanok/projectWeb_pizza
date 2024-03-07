@@ -7,10 +7,6 @@
     }
 } 
 
-.language {
-    align-items: center;
-}
-
 body {
     background-color: #D12024;
     /* background-image: url('images/ItIsPizza.jpg');
@@ -22,11 +18,12 @@ body {
     animation: slide-up 1s ease forwards;
     font-size: 7vw;
     font-weight: bold;
-    text-align: center;
     line-height: 6vw;
     color: #F3C959;
     margin-top: 1vw;
-    margin-bottom: 1.5vw;
+    display: grid;
+    place-items: center;
+    height: 90vh;
 }
 
 .tap-to-start {
@@ -34,4 +31,5 @@ body {
     font-size: 2.5vw;
     text-align: center;
     color: white;
+
 }
