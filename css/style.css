@@ -1,0 +1,37 @@
+@keyframes slide-up {
+    0% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+} 
+
+.language {
+    align-items: center;
+}
+
+body {
+    background-color: #D12024;
+    /* background-image: url('images/ItIsPizza.jpg');
+    background-position: fixed; */
+    background-size: 100%;
+}
+
+.ItIsPizza {
+    animation: slide-up 1s ease forwards;
+    font-size: 7vw;
+    font-weight: bold;
+    text-align: center;
+    line-height: 6vw;
+    color: #F3C959;
+    margin-top: 1vw;
+    margin-bottom: 1.5vw;
+}
+
+.tap-to-start {
+    animation: slide-up 1s ease forwards;
+    font-size: 2.5vw;
+    text-align: center;
+    color: white;
+}
