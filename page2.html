@@ -16,7 +16,7 @@
         
         <form class="" action="" method="post" autocomplete="off">
             <!-- เลือกหน้าพิซซ่า -->
-            <select id="imageSelect" onchange="changeImage()">
+            <select id="order_name" name="order_name" onchange="changeImage()">
                 <option value="images/S__61104136_0.jpg">Double Cheese</option>
                 <option value="images/S__61104135_0.jpg">Double Pepperoni</option>
                 <option value="images/S__61104136_0.jpg">Hawaiian</option>
@@ -26,7 +26,7 @@
             </select>
             <br><br>
 
-            <img id="selectedImage" src="images/PIZZA.jpg" alt="Selected Image">
+            <img id="img_order_name" src="images/PIZZA.jpg" alt="Selected Image">
             <br><br>
 
             <!-- เลือก size -->
@@ -57,8 +57,12 @@
             <button type="reset">clear</button>
 
             <!-- ปุ่มยืนยัน -->
-            <button type="submit">submit</button>
+            <button type="submit" onclick="page3.html">submit</button>
         </form>
         
+        <!-- สรุปจ่ายตัง -->
+        <div id="mySidenav" class="sidenav">
+            <a href="#" id="about">About</a>
+          </div>
     </body>
 <!DOCTYPE html>

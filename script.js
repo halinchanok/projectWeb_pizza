@@ -6,7 +6,7 @@ function plusSlides() {
 }
 
 function showSlides(n) {
-  const slides = document.getElementsByClassName('menu');
+  const slides = document.getElementsByClassName('responsive');
   if (n >= slides.length) {
     slideIndex = 0;
   }
@@ -20,8 +20,8 @@ function showSlides(n) {
 
 // page2
 function changeImage() {
-    const selectElement = document.getElementById("imageSelect");
-    const selectedImage = document.getElementById("selectedImage");
+    const selectElement = document.getElementById("order_name");
+    const selectedImage = document.getElementById("img_order_name");
     const selectedValue = selectElement.value;
     selectedImage.src = selectedValue;
 }
