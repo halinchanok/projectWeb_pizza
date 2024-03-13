@@ -25,3 +25,18 @@ function changeImage() {
     const selectedValue = selectElement.value;
     selectedImage.src = selectedValue;
 }
+
+// เปิดปิดเเท็บจ่ายตัง
+let ch = 0;
+
+function openNav() {
+  if(ch == 0){
+    document.getElementById("cart22").style.width = "480px"; //เวลากดปุ่มจ่ายตังจะให้มันเลื่อนออกมาเท่าไหร่
+    document.getElementById("main").style.marginRight = "0px";
+    ch = 1;
+  }else if (ch == 1){
+    document.getElementById("cart22").style.width = "0px"; 
+    document.getElementById("main").style.marginRight = "0px";
+    ch = 0;
+  }
+}

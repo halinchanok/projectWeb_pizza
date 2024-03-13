@@ -3,10 +3,12 @@ require 'connection.php'; //เชื่อมต่อกับไฟล์ con
 
 secction_start();
 
+$_session['order_name'] = $_post['order_name'];
+header('Location: page2.html');
+exit;
 
 // page2
 if($server["Request_method"] == "post"){
-    $_session['order_name'] = $_post['order_name'];
     $_session['order_size'] = $_post['order_size'];
     $_session['order_crust'] = $_post['order_crust'];
     $_session['order_ham'] = $_post['order_ham'];
@@ -29,6 +31,7 @@ if(isset($_post["submit"])){
         echo "Please choose to use all of them.";
     }
 }
+
 
 $conn->close();
 

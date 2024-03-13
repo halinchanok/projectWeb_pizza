@@ -2,26 +2,57 @@
     height: 10vw;
 }
 
+/* จ่ายตัง */
+/* สร้างกรอบด้านขวา */
+#cart22 {
+  font-family: Helvetica, Arial, sans-serif, tahoma;
+  font-size: 25px;
+  position: fixed;
+  z-index: 3000000007; /*ทำให้อยู่บนสุดตลอด*/
+  overflow-y: auto;
+  height: 100%;
+  color: #111;
+  background: rgba(255, 255, 255, 0.867);
+  box-shadow: 0 0 15px rgba(0,0,0,.25);
+  backdrop-filter: saturate(100%) blur(50px); /*เอฟเฟคฟิวเตอร์พื้นหลัง*/
+}
 
-/* ปุ่ม pay */
-#mySidenav a {
-    position: absolute; /* Position them relative to the browser window */
-    right: -15px; /* Position them outside of the screen */
-    transition: 0.3s; /* Add transition on hover */
-    padding: 15px; /* 15px padding */
-    width: 100px; /* Set a specific width */
-    text-decoration: none; /* Remove underline */
-    font-size: 25px; /* Increase font size */
-    color: white; /* White text color */
-    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
-  }
-  
-  #mySidenav a:hover {
-    right: 0; /* On mouse-over, make the elements appear as they should */
-  }
-  
-  /* The about link: 20px from the top with a green background */
-  #about {
-    top: 100px;
-    background-color: #04AA6D;
-  }
+
+/* ตกแต่งหน้าจ่ายตัง */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color: #e22222; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.3s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  /* padding: 8px 8px 8px 32px; */
+  text-decoration: none; /*ลบเส้นขีดใต้ลิ้ง*/
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s; /*เวลาสไลด์ออกมา*/
+}
+
+/* open button*/
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #dd2f2f;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+

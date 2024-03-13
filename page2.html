@@ -59,10 +59,42 @@
             <!-- ปุ่มยืนยัน -->
             <button type="submit" onclick="page3.html">submit</button>
         </form>
+        <br><br>
         
         <!-- สรุปจ่ายตัง -->
-        <div id="mySidenav" class="sidenav">
-            <a href="#" id="about">pay</a>
-          </div>
+        <div id="cart22" class="sidebar">
+            <div class="cart22_container">
+                <div class="cart22_header">
+                    <div>สินค้าในตะกร้า</div>
+                </div>
+                <div class="cart22_content">
+                    <div><span>ขออภัย ขณะนี้ไม่มีสินค้าในตะกร้า</span></div>
+                    <!--ไว้จะมาเชื่อม PHP นะจ๊ะ -->
+                </div>
+                <div class="cart22_tailer">
+                    <div class="cart22_summary">
+                        <div class="cart22_summary_label">
+                            <div>ราคาสินค้าทั้งหมด</div>
+                            <div class="minor">0 ชิ้น</div>
+                        </div>
+                        <div class="cart22_summary_amount">
+                            <div>฿ 0.00</div>
+                            <div class="minor">ราคารวม</div>
+                        </div>
+                    </div>
+                    <div class="cart22_action">
+                        <div class="cart22_countinue">
+                            <span style="transform: rotate(180deg) ; display: inline-block;">⟶</span>
+                            เลือกสินค้าเพิ่มเติม<br><br>
+                        </div>
+                        <div class="cart22_button cart22_checkout" style="background-color: rgb(156, 39, 176);">จ่ายตัง</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776; จ่ายตัง</button>
+        </div>
+
     </body>
 <!DOCTYPE html>
