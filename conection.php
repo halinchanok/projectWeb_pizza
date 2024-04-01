@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'pizza_store';
+$db = 'pizzastore';
 $conn = mysql_connect($host, $user, $pass, $db);
 
 if($conn){
