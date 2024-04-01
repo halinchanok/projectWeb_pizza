@@ -1,8 +1,8 @@
 <?php
-$host = '';
-$user = '';
+$host = 'localhost';
+$user = 'root';
 $pass = '';
-$db = '';
+$db = 'pizza_store';
 $conn = mysql_connect($host, $user, $pass, $db);
 
 if($conn){
