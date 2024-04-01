@@ -6,16 +6,79 @@
     </head>
     <body>
         <script src="script.js"></script>
-        <h1>Menu<h1>
-        <div class="slides">
-            <div class="menu">1</div>
-            <div class="menu">2</div>
-            <div class="menu">3</div>
-            <div class="menu">4</div>
-            <div class="menu">5</div>
-            <div class="menu">6</div>
+        <h1 class="head">PIZZA MENU<h1>
+
+        <div class="container">
+            <div class="menu1">
+                <img src="images/cheese pizza.webp">
+                <div class="cs">CHEESE PIZZA</div>
+                <button class="BT1" id="btn1"> ข้อความ </button>    
+            </div>
+            <script>
+                document.getElementById('btn1').addEventListener('click', function() {
+                  window.location.href = 'page2.html'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                });
+            </script>
+                
+            <div class="menu2">
+                <img src="images/Double pepperoni.webp">
+                <div class="cs">DOUBLE PEPPERONI</div>
+                <button class="BT2" id="btn2"> ข้อความ </button>    
+            </div>
+            <script>
+                document.getElementById('btn2').addEventListener('click', function() {
+                  window.location.href = 'page2.html'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                });
+            </script>
+
+            <div class="menu3">
+                <img src="images/HAM&C.webp">
+                <div class="cs">HAM&CRAB STICKS</div> 
+                <button class="BT3" id="btn3"> ข้อความ </button>    
+            </div>
+            <script>
+                document.getElementById('btn3').addEventListener('click', function() {
+                  window.location.href = 'page2.html'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                });
+            </script>
         </div>
-        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+
+        <br>
+
+        <div class="container2">
+            <div class="menu">
+                <img src="images/MEAT DELUXE.webp">
+                <div class="cs">MEAT DELUXE</div> 
+                <button class="BT4" id="btn4"> ข้อความ </button>    
+            </div>
+            <script>
+                document.getElementById('btn4').addEventListener('click', function() {
+                  window.location.href = 'page2.html'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                });
+            </script>
+            <div class="menu">
+                <img src="images/TOM YUM KUNG.webp">
+                <div class="cs">TOM YUM KUNG</div> 
+                <button class="BT5" id="btn5"> ข้อความ </button>    
+            </div>
+            <script>
+                document.getElementById('btn5').addEventListener('click', function() {
+                  window.location.href = 'page2.html'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                });
+            </script>
+
+            <div class="menu">
+                <img src="images/SEAFOOD DELUXE.webp">
+                <div class="cs">SEAFOOD DELUXE</div> 
+            <button class="BT6" id="btn6"> ข้อความ </button>    
+            </div>
+            <script>
+                document.getElementById('btn6').addEventListener('click', function() {
+                  window.location.href = 'page2.html'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                });
+            </script>
+        </div>
+        
     </body>
+
 <!DOCTYPE html>

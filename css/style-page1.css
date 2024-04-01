@@ -1,17 +1,484 @@
-.slides {
-    display: flex;
-    flex-wrap: wrap-reverse; /* เว้นช่องว่างระหว่างรูป */
-    
-    width: 100%;
-    height: 30vw;
-    background-color: grey;
-    overflow: hidden;
+body {
+    background-color: #F6E2A4;
 }
 
-.menu {
+.head {
+    color: #D12024;
+    font-size: 60px;
+    text-align: center;
+    position: relative; /* เพื่อสร้างพื้นที่สำหรับขีดเส้น */
+    margin: 50px auto; /* การจัดตำแหน่งแนวนอนและแนวตั้ง */
+    max-width: 80%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.head::after {
+    content: '';
+    position: absolute; /* ตำแหน่งเพื่อขีดเส้น */
+    left: 0;
+    bottom: -10px; /* ย้ายขีดเส้นลงมาเล็กน้อยจากข้อความ */
+    width: 100%; /* กว้างเต็มขอบ */
+    height: 2px; /* ความสูงของเส้น */
+    background-color: #D12024; /* สีของเส้น */
+    border-bottom: 50px
+  }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*เหลี่ยมแรกซ้ายมือบน*/
+.menu1 {
     width: 20vw;
-    height: 30vw;
-    background-color: rgb(78, 78, 78);
+    height: 22vw;
+    background-color: #F3C959;
     margin: 0 auto;
     flex: 0 0 auto;
+    border-radius: 10px;
+    margin: 50px;
+    margin-top: 10px;
+}
+
+.menu1 img{
+    display: inline;
+    width: 30vw;
+    height: 20vw;
+    margin-left: -75px;
+    margin-top: -50px;
+    
+}
+.cs {
+    margin-top: -40px;
+    font-size: 50px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color:white;
+}
+/*ปุ่มราคา1*/
+.BT1 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-radius: 20vw;
+}
+.BT1{
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT1:before {
+	content: '299 ฿';
+	color: white;
+	font-size: 16px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 40px;
+	background-color: #D12024;
+	background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT1:hover {
+	background-position: right;
+}
+
+.BT1:hover:before {
+	color: rgba(255,255,255,0.8);
+}
+
+.BT1:focus {
+	outline: none;
+}
+
+/*เหลี่ยมกลางบน*/
+.menu2 {
+    width: 20vw;
+    height: 22vw;
+    background-color: #F3C959;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    margin: 50px;
+    margin-top: 10px;
+}
+
+.menu2 img{
+    display: inline;
+    width: 30vw;
+    height: 20vw;
+    margin-left: -75px;
+    margin-top: -50px;
+}
+.cs {
+    margin-top: -40px;
+    font-size: 20px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color:white;
+}
+/*ปุ่มราคา2*/
+.BT2 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-radius: 20vw;
+}
+.BT2{
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT2:before {
+	content: '299 ฿';
+	color: white;
+	font-size: 16px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 40px;
+	background-color: #D12024;
+	background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT2:hover {
+	background-position: right;
+}
+
+.BT2:hover:before {
+	color: rgba(255,255,255,0.8);
+}
+
+.BT2:focus {
+	outline: none;
+}
+
+/*เหลี่ยมบนขวา*/
+.menu3 {
+    width: 20vw;
+    height: 22vw;
+    background-color: #F3C959;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    margin: 50px;
+    margin-top: 10px;
+}
+
+.menu3 img{
+    display: inline;
+    width: 30vw;
+    height: 20vw;
+    margin-left: -75px;
+    margin-top: -50px;
+}
+.cs {
+    margin-top: -40px;
+    font-size: 20px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color:white;
+}
+.BT3 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-radius: 20vw;
+}
+.BT3{
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT3:before {
+	content: '299 ฿';
+	color: white;
+	font-size: 16px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 40px;
+	background-color: #D12024;
+	background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT3:hover {
+	background-position: right;
+}
+
+.BT3:hover:before {
+	color: rgba(255,255,255,0.8);
+}
+
+.BT3:focus {
+	outline: none;
+}
+
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.menu {
+    width: 20vw;
+    height: 22vw;
+    background-color: #F3C959;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    margin: 50px;
+    margin-top: -20px;
+}
+
+.menu img{
+    display: inline;
+    width: 30vw;
+    height: 20vw;
+    margin-left: -75px;
+    margin-top: -50px;
+}
+.cs {
+    margin-top: -40px;
+    font-size: 20px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color:white;
+}
+/*ปุ่ม4*/
+.BT4 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-radius: 20vw;
+}
+.BT4{
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT4:before {
+	content: '299 ฿';
+	color: white;
+	font-size: 16px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 40px;
+	background-color: #D12024;
+	background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT4:hover {
+	background-position: right;
+}
+
+.BT4:hover:before {
+	color: rgba(255,255,255,0.8);
+}
+
+.BT4:focus {
+	outline: none;
+}
+/*ปุ่ม5*/
+.BT5 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-radius: 20vw;
+}
+.BT5{
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT5:before {
+	content: '299 ฿';
+	color: white;
+	font-size: 16px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 40px;
+	background-color: #D12024;
+	background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT5:hover {
+	background-position: right;
+}
+
+.BT5:hover:before {
+	color: rgba(255,255,255,0.8);
+}
+
+.BT5:focus {
+	outline: none;
+}
+/*ปุ่ม6*/
+.BT6 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-radius: 20vw;
+}
+.BT6{
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT6:before {
+	content: '299 ฿';
+	color: white;
+	font-size: 16px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 40px;
+	background-color: #D12024;
+	background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+	transition: 500ms;
+    border-radius: 20vw;
+}
+
+.BT6:hover {
+	background-position: right;
+}
+
+.BT6:hover:before {
+	color: rgba(255,255,255,0.8);
+}
+
+.BT6:focus {
+	outline: none;
 }

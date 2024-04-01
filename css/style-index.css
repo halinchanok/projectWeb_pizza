@@ -14,21 +14,37 @@ body {
     background-size: 100%;
 }
 
-.ItIsPizza {
+.Language {
+  display: flex;
+  justify-content: flex-end; /* จัดให้อยู่ด้านขวา */
+  padding: 10px;
+}
+
+
+.language {
+    width: 70px;
+    padding: 5px; /* เพิ่ม padding เพื่อเพิ่มพื้นที่รอบเลือก */
+    font-size: 16px; /* ปรับขนาดตัวอักษร */
+    border: 2px solid #ccc; /* เพิ่มเส้นขอบ */
+    border-radius: 20px; /* เพิ่มมุมขอบโค้ง */
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.language img{
+    width: 1000px;
+}
+.ItIsPizza img{
     animation: slide-up 1s ease forwards;
-    font-size: 7vw;
-    font-weight: bold;
-    line-height: 6vw;
-    color: #F3C959;
-    margin-top: 1vw;
-    display: grid;
-    place-items: center;
-    height: 90vh;
+    width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .tap-to-start {
     animation: slide-up 1s ease forwards;
-    font-size: 2.5vw;
+    font-size: 2.0vw;
     text-align: center;
     color: white;
 
