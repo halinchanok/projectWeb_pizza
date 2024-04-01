@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <head>
         <title>page2</title>
-        <link rel="stylesheet" href="css/style-page1.css"> <!-- CSS -->
+        <link rel="stylesheet" href="css/style-page2.css"> <!-- CSS -->
 
     </head>
 
@@ -14,36 +14,87 @@
         </a> <br>
         <h1>IT EAT PIZZA</h1>
         
-        <select id="imageSelect" onchange="changeImage()">
-            <option value="images/S__61104136_0.jpg">Double Cheese</option>
-            <option value="images/S__61104135_0.jpg">Double Pepperoni</option>
-            <option value="images/S__61104136_0.jpg">Hawaiian</option>
-            <option value="images/S__61104136_0.jpg">Seafood Cocktail</option>
-            <option value="images/S__61104136_0.jpg">Ham&Crab Sticks</option>
-            <option value="images/S__61104136_0.jpg">4 Cheese & Bacon</option>
-        </select>
-        <br><br>
+        <form class="" action="" method="post" autocomplete="off">
+            <!-- เลือกหน้าพิซซ่า -->
+            <select id="order_name" name="order_name" onchange="changeImage()">
+                <option value="images/S__61104136_0.jpg">Double Cheese</option>
+                <option value="images/S__61104135_0.jpg">Double Pepperoni</option>
+                <option value="images/S__61104136_0.jpg">Hawaiian</option>
+                <option value="images/S__61104136_0.jpg">Seafood Cocktail</option>
+                <option value="images/S__61104136_0.jpg">Ham&Crab Sticks</option>
+                <option value="images/S__61104136_0.jpg">4 Cheese & Bacon</option>
+            </select>
+            <br><br>
 
-        <img id="selectedImage" src="images/PIZZA.jpg" alt="Selected Image">
-        <br><br>
+            <img id="img_order_name" src="images/PIZZA.jpg" alt="Selected Image">
+            <br><br>
 
-        <h1 class="size">size</h1>
+            <!-- เลือก size -->
+            <h1 class="size">size</h1>
+            <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
+            <label for="size-s">S</label>
+            <input type="radio" class="size-s" id="size-S" name="size" value="S" required>
+            <label for="size-m">M</label>
+            <input type="radio" id="size-M" name="size" value="M" required>
+            <label for="size-L">L</label>
+            <input type="radio" id="size-L" name="size" value="L" required>
+            <br>
+
+            <!-- เลือกขอบ -->
+            <h1>เลือกขอบ</h1>
+            <select class="edge">
+                <option>ขอบหนานุ่ม</option>
+                <option>บางกรอบ</option>
+                <option>ขอบชีส</option>
+                <option>ขอบไส้กรอกชีส</option>
+            </select>
+            <br><br>
+
+            <!-- ปุ่มเลือกเมนูเพิ่ม -->
+            <button type="">add</button>
+
+            <!-- ปุ่มล้างข้อมูล -->
+            <button type="reset">clear</button>
+
+            <!-- ปุ่มยืนยัน -->
+            <button type="submit" onclick="page3.html">submit</button>
+        </form>
+        <br><br>
         
-        <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
-        <label for="size-s">S</label>
-        <input type="radio" class="size-s" id="size-S" name="size" value="S" required>
-        <label for="size-m">M</label>
-        <input type="radio" id="size-M" name="size" value="M" required>
-        <label for="size-L">L</label>
-        <input type="radio" id="size-L" name="size" value="L" required>
-        <br>
+        <!-- สรุปจ่ายตัง -->
+        <div id="cart22" class="sidebar">
+            <div class="cart22_container">
+                <div class="cart22_header">
+                    <div>สินค้าในตะกร้า</div>
+                </div>
+                <div class="cart22_content">
+                    <div><span>ขออภัย ขณะนี้ไม่มีสินค้าในตะกร้า</span></div>
+                    <!--ไว้จะมาเชื่อม PHP นะจ๊ะ -->
+                </div>
+                <div class="cart22_tailer">
+                    <div class="cart22_summary">
+                        <div class="cart22_summary_label">
+                            <div>ราคาสินค้าทั้งหมด</div>
+                            <div class="minor">0 ชิ้น</div>
+                        </div>
+                        <div class="cart22_summary_amount">
+                            <div>฿ 0.00</div>
+                            <div class="minor">ราคารวม</div>
+                        </div>
+                    </div>
+                    <div class="cart22_action">
+                        <div class="cart22_countinue">
+                            <span style="transform: rotate(180deg) ; display: inline-block;">⟶</span>
+                            เลือกสินค้าเพิ่มเติม<br><br>
+                        </div>
+                        <div class="cart22_button cart22_checkout" style="background-color: rgb(156, 39, 176);">จ่ายตัง</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776; จ่ายตัง</button>
+        </div>
 
-        <h1>เลือกขอบ</h1>
-        <select class="edge">
-            <option>ขอบหนานุ่ม</option>
-            <option>บางกรอบ</option>
-            <option>ขอบชีส</option>
-            <option>ขอบไส้กรอกชีส</option>
-        </select>
     </body>
 <!DOCTYPE html>
