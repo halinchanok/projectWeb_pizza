@@ -1,7 +1,7 @@
 <?php
 require 'connection.php'; //เชื่อมต่อกับไฟล์ connection.php
 
-secction_start(); //ใช้ secction
+sesstion_start(); //ใช้ secction
 
 $_session['order_name'] = $_post['order_name'];
 header('Location: page2.html');
