@@ -1,7 +1,7 @@
 <?php
 require 'connection.php'; //เชื่อมต่อกับไฟล์ connection.php
 
-secction_start();
+secction_start(); //ใช้ secction
 
 $_session['order_name'] = $_post['order_name'];
 header('Location: page2.html');
@@ -31,9 +31,9 @@ if(isset($_post["submit"])){
         echo "Please choose to use all of them.";
     }
 }
+echo $_session['order_name'];
+
 
 
 $conn->close();
-
-
 ?>
