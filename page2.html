@@ -11,7 +11,7 @@
     <body>
         <script src="script.js"></script> <!-- JS -->
 
-        <a href="page1_menu.html" target="_blank">
+        <a href="page1_menu.html" target="_self">
             <button class="BACK">back</button>
         </a>
         <img class="IEP" src="images/IT EAT PIZZA.png">
@@ -44,7 +44,7 @@
             <br>
 
             <!-- เลือกขอบ -->
-            <h1 class="crust">เลือกขอบ</h1>
+            <h1>เลือกขอบ</h1>
             <select class="edge">
                 <option>ขอบหนานุ่ม</option>
                 <option>บางกรอบ</option>
@@ -90,6 +90,16 @@
         
         <!-- สรุปจ่ายตัง -->
         <div id="cart22" class="sidebar">
+            <?php
+            echo "heelo";
+                session_start(); //ใช้ sesstion
+                
+                if($server["Request_method"] == "ch"){
+                    $_SESSION['username'] = 'JohnDoe';
+                    echo $_session['username'];
+                }
+            ?>
+
             <div class="cart22_container">
                 <div class="cart22_header">
                     <div>สินค้าในตะกร้า</div>
@@ -120,9 +130,9 @@
             </div>
         </div>
         <div id="main">
-            <button class="openbtn" onclick="openNav()">&#9776; จ่ายตัง</button>
+            <button class="openbtn" onclick="openNav()" methode="ch">&#9776; จ่ายตัง</button>
         </div>
-    </div>
+
     </body>
     </html>
 <!DOCTYPE html>
