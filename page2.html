@@ -68,6 +68,16 @@
         
         <!-- สรุปจ่ายตัง -->
         <div id="cart22" class="sidebar">
+            <?php
+            echo "heelo";
+                session_start(); //ใช้ sesstion
+                
+                if($server["Request_method"] == "ch"){
+                    $_SESSION['username'] = 'JohnDoe';
+                    echo $_session['username'];
+                }
+            ?>
+
             <div class="cart22_container">
                 <div class="cart22_header">
                     <div>สินค้าในตะกร้า</div>
@@ -98,12 +108,8 @@
             </div>
         </div>
         <div id="main">
-            <button class="openbtn" onclick="openNav()">&#9776; จ่ายตัง</button>
+            <button class="openbtn" onclick="openNav()" methode="ch">&#9776; จ่ายตัง</button>
         </div>
-
-        <!-- ใช้ดึงข้อมูลแบบนี้ได้ php -->
-        <br><br>
-
     </body>
     </html>
 <!DOCTYPE html>
