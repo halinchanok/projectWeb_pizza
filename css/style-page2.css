@@ -1,7 +1,9 @@
 .imageSelect {
     height: 10vw;
 }
-
+body {
+  background-color: #F6E2A4;
+}
 /* จ่ายตัง */
 /* สร้างกรอบด้านขวา */
 #cart22 {
@@ -47,4 +49,75 @@
 .openbtn:hover {
   background-color: #444;
 }
+.TITLE {
+  font-size: 50px;
+  text-align: center;
+  color: #dd2f2f;
+  margin-top: -10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.BACK {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 20vw;
+}
+.BACK  {
+width: 100px;
+height: 50px;
+cursor: pointer;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: white;
+background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+background-size: 200% 100%;
+background-position: left;
+background-repeat: no-repeat;
+transition: 500ms;
+  border-radius: 20vw;
+}
+
+.BACK:before {
+content: '<<<<';
+color: #D12024;
+font-size: 16px;
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 90px;
+height: 40px;
+background-color: #D12024;
+background-image: linear-gradient(315deg, #F6E2A4 0%, #F6E2A4 74%);
+transition: 500ms;
+  border-radius: 20vw;
+}
+
+.BACK:hover {
+background-position: right;
+}
+
+.BACK:hover:before {
+color: rgba(255,255,255,0.8);
+}
+
+.BACK:focus {
+outline: none;
+}
+
+.IEP {
+  width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  margin-top: -30px;
+}
