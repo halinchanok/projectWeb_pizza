@@ -1,7 +1,7 @@
 <?php
 require 'connection.php'; //เชื่อมต่อกับไฟล์ connection.php
 
-sesstion_start(); //ใช้ secction
+session_start(); //ใช้ sesstion
 
 $_session['order_name'] = $_post['order_name'];
 header('Location: page2.html');
@@ -32,7 +32,6 @@ if(isset($_post["submit"])){
     }
 }
 echo $_session['order_name'];
-
 
 
 $conn->close();
