@@ -27,6 +27,8 @@
 
 
         <div class="container">
+            <img class="best" src="images/bestsell.png">
+            <img class="best2" src="images/bestsell.png">
             <div class="menu1">
                 <img src="images/cheese pizza.webp">
                 <div class="cs">CHEESE PIZZA</div>
@@ -62,8 +64,9 @@
         </div>
 
         <br>
-
+            
         <div class="container2">
+            <img class="best3" src="images/bestsell.png">
             <div class="menu">
                 <img src="images/MEAT DELUXE.webp">
                 <div class="cs">MEAT DELUXE</div> 
