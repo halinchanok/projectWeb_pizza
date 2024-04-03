@@ -32,8 +32,8 @@
             <form class="" action="" method="post" autocomplete="off">
             <!-- เลือกหน้าพิซซ่า -->
             <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
-                <option class="img" value="images/cheese pizza.webp">CHEESE PIZZA</option>
                 <option class="img" value="images/Double pepperoni.webp">Double Pepperoni</option>
+                <option class="img" value="images/cheese pizza.webp">CHEESE PIZZA</option>
                 <option class="img" value="images/HAM&C.webp">HAM&CRAB STICKS</option>
                 <option class="img" value="images/TOM YUM KUNG.webp">TOM YUM KUNG</option>
                 <option class="img" value="images/MEAT DELUXE.webp">MEAT DELUXE</option>
