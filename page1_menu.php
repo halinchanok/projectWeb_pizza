@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    $_SESSION['menu1'] = null;
+    $_SESSION['size'] = null;
+    $_SESSION['crust'] = null;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION['menu1'] = $_POST['order_name'];
+
+        // Redirect to next page after saving data in session
+        header("Location: page2.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="th">
     <head>
@@ -9,6 +24,7 @@
     <body>
         <script src="script.js"></script>
         <IMG class="HEAD" src="images/menu.png">
+
 
         <div class="container">
             <img class="best" src="images/bestsell.png">

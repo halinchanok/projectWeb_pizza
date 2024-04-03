@@ -3,7 +3,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // รับค่าที่ส่งมาจาก form
-        $_SESSION['menu'] = $_POST['order_name'];
+        $_SESSION['menu2'] = $_SESSION['menu1'];
         $_SESSION['size'] = $_POST['order_size'];
         $_SESSION['crust'] = $_POST['order_crust'];
     }
@@ -117,38 +117,33 @@
         
         <!-- สรุปจ่ายตัง -->
         <div id="cart22" class="sidebar">
-            <?php
-                // ตรวจสอบว่ามีข้อมูลใน session หรือไม่
-                if(isset($_SESSION['menu']) && isset($_SESSION['size']) && isset($_SESSION['crust'])) {
-                    // แสดงผลข้อมูลที่เก็บใน session
-                    if($_SESSION['menu'] == "images/cheese pizza.webp"){
-                        echo "เมนู: " . "CHEESE PIZZA" . "<br>";
-                    }else if($_SESSION['menu'] == "images/Double pepperoni.webp"){
-                        echo "เมนู: " . "Double Pepperoni" . "<br>";
-                    }else if($_SESSION['menu'] == "images/HAM&C.webp"){
-                        echo "เมนู: " . "HAM&CRAB STICKS" . "<br>";
-                    }else if($_SESSION['menu'] == "images/TOM YUM KUNG.webp"){
-                        echo "เมนู: " . "TOM YUM KUNG" . "<br>";
-                    }else if($_SESSION['menu'] == "images/MEAT DELUXE.webp"){
-                        echo "เมนู: " . "MEAT DELUXE" . "<br>";
-                    }else echo "เมนู: " . "SEAFOOD DELUXE" . "<br>";
-                    echo "ขนาด: " . $_SESSION['size'] . "<br>";
-                    echo "ขอบ: " . $_SESSION['crust'] . "<br>";
-                } 
-                else {
-                    echo "ยังไม่มีข้อมูลที่เก็บใน Session";
-                }
-            ?>
             <br><br>
             <div class="cart22_container">
                 <div class="cart22_header">
                     <div>สินค้าในตะกร้า</div>
                 </div>
-
-                <div class="cart22_content">
-                    <div><span>ขออภัย ขณะนี้ไม่มีสินค้าในตะกร้า</span></div>
-                    <!--ไว้จะมาเชื่อม PHP นะจ๊ะ -->
-                </div>
+                <?php
+                    // ตรวจสอบว่ามีข้อมูลใน session หรือไม่
+                    if(isset($_SESSION['menu']) && isset($_SESSION['size']) && isset($_SESSION['crust'])) {
+                        // แสดงผลข้อมูลที่เก็บใน session
+                        if($_SESSION['menu'] == "images/cheese pizza.webp"){
+                            echo "เมนู: " . "CHEESE PIZZA" . "<br>";
+                        }else if($_SESSION['menu'] == "images/Double pepperoni.webp"){
+                            echo "เมนู: " . "Double Pepperoni" . "<br>";
+                        }else if($_SESSION['menu'] == "images/HAM&C.webp"){
+                            echo "เมนู: " . "HAM&CRAB STICKS" . "<br>";
+                        }else if($_SESSION['menu'] == "images/TOM YUM KUNG.webp"){
+                            echo "เมนู: " . "TOM YUM KUNG" . "<br>";
+                        }else if($_SESSION['menu'] == "images/MEAT DELUXE.webp"){
+                            echo "เมนู: " . "MEAT DELUXE" . "<br>";
+                        }else echo "เมนู: " . "SEAFOOD DELUXE" . "<br>";
+                        echo "ขนาด: " . $_SESSION['size'] . "<br>";
+                        echo "ขอบ: " . $_SESSION['crust'] . "<br>";
+                    } 
+                    else {
+                        echo "ขออภัย ขณะนี้ไม่มีสินค้าในตะกร้า";
+                    }
+                ?>
                 <div class="cart22_tailer">
                     <div class="cart22_summary">
                         <div class="cart22_summary_label">
@@ -175,7 +170,6 @@
             <button class="openbtn" onclick="openNav()" methode="ch">&#9776; จ่ายตัง</button>
         </div>
 
-        
     </body>
     </html>
 <!DOCTYPE html>
