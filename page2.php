@@ -34,10 +34,10 @@
             <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
                 <option class="img" value="images/cheese pizza.webp">CHEESE PIZZA</option>
                 <option class="img" value="images/Double pepperoni.webp">Double Pepperoni</option>
-                <option class="img" value="images/S__61104136_0.jpg">HAM&CRAB STICKS</option>
-                <option class="img" value="images/S__61104136_0.jpg">TOM YUM KUNG</option>
-                <option class="img" value="images/S__61104136_0.jpg">MEAT DELUXE</option>
-                <option class="img" value="images/S__61104136_0.jpg">SEAFOOD DELUXE</option>
+                <option class="img" value="images/HAM&C.webp">HAM&CRAB STICKS</option>
+                <option class="img" value="images/TOM YUM KUNG.webp">TOM YUM KUNG</option>
+                <option class="img" value="images/MEAT DELUXE.webp">MEAT DELUXE</option>
+                <option class="img" value="images/SEAFOOD DELUXE.webp">SEAFOOD DELUXE</option>
             </select>
             <br><br>
                 
