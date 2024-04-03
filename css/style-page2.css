@@ -28,10 +28,11 @@ body {
   z-index: 1; /* Stay on top */
   top: 0;
   right: 0;
-  background-color: #e22222; /* Black*/
+  background-color: #D12024; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.3s; /* 0.5 second transition effect to slide in the sidebar */
+  
 }
 
 /* ปุ่ม จ่ายตัง*/
@@ -44,6 +45,9 @@ body {
   border: none;
   position: absolute;
   left:0;  
+  margin-top: -100px;
+  border-radius: 5px;
+  margin-left: 30px;
 }
 
 .openbtn:hover {
@@ -224,10 +228,313 @@ outline: none;
 }
 
 .contop {
-  width: 200px;
-  height: 900px;
-  background-color: #F3C959;
-  margin-left: 1090px;
-  margin-top: -400px;
+  width: 500px;
+  height: 200px;
+  background-color: #F6E2A4;
+  margin-left: 500px;
+  margin-top: 0px;
   border-radius: 20px;
+}
+
+.radio-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 75px;
+  
+}
+
+.radio-inputs > * {
+  margin: 6px;
+}
+
+.radio-input:checked + .radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #2260ff;
+}
+
+.radio-input:checked + .radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #2260ff;
+  border-color: #2260ff;
+}
+
+.radio-input:checked + .radio-tile .radio-icon svg {
+  fill: #2260ff;
+}
+
+.radio-input:checked + .radio-tile .radio-label {
+  color: #2260ff;
+}
+
+.radio-input:focus + .radio-tile {
+  border-color: #2260ff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus + .radio-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  min-height: 150px;
+  border-radius: 0.5rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 0.25rem;
+  left: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+  border-color: #F3C959;
+}
+
+.radio-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.radio-icon svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #494949;
+}
+
+.radio-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
+  font-size: 13px;
+}
+
+.radio-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.PEP {
+  width: 80px;
+  height: 80px;
+}
+
+.HAM {
+  width: 100px;
+  height: 100px;
+  margin-left: -10%;
+}
+.CHEESE {
+  margin-left: 10%;
+}
+
+.ADD {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 1350px;
+  margin-top: 10px;
+  border-radius: 20vw;
+  position: absolute;
+  margin-top: -210px;
+}
+.ADD {
+width: 130px;
+height: 50px;
+cursor: pointer;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: white;
+background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+background-size: 200% 100%;
+background-position: left;
+background-repeat: no-repeat;
+transition: 500ms;
+  border-radius: 20vw;
+}
+
+.ADD:before {
+content: 'ADD';
+color: white;
+font-size: 16px;
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 120px;
+height: 40px;
+background-color: #D12024;
+background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+transition: 500ms;
+  border-radius: 20vw;
+}
+
+.ADD:hover {
+background-position: right;
+}
+
+.ADD:hover:before {
+color: rgba(255,255,255,0.8);
+}
+
+.ADD:focus {
+outline: none;
+}
+
+.RESET {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 1350px;
+  margin-top: 10px;
+  border-radius: 20vw;
+  position: absolute;
+  margin-top: -155px;
+}
+.RESET {
+width: 130px;
+height: 50px;
+cursor: pointer;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: white;
+background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+background-size: 200% 100%;
+background-position: left;
+background-repeat: no-repeat;
+transition: 500ms;
+  border-radius: 20vw;
+}
+
+.RESET:before {
+content: 'RESET';
+color: white;
+font-size: 16px;
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 120px;
+height: 40px;
+background-color: #D12024;
+background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+transition: 500ms;
+  border-radius: 20vw;
+}
+
+.RESET:hover {
+background-position: right;
+}
+
+.RESET:hover:before {
+color: rgba(255,255,255,0.8);
+}
+
+.RESET:focus {
+outline: none;
+}
+
+.SUBMIT {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 1350px;
+  margin-top: 10px;
+  border-radius: 20vw;
+  position: absolute;
+  margin-top: -100px;
+}
+.SUBMIT {
+width: 130px;
+height: 50px;
+cursor: pointer;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: white;
+background-image: linear-gradient(315deg, #F3C959 0%, #D12024 74%);
+background-size: 200% 100%;
+background-position: left;
+background-repeat: no-repeat;
+transition: 500ms;
+  border-radius: 20vw;
+}
+
+.SUBMIT:before {
+content: 'SUBMIT';
+color: white;
+font-size: 16px;
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 120px;
+height: 40px;
+background-color: #D12024;
+background-image: linear-gradient(315deg, #D12024 0%, #D12024 74%);
+transition: 500ms;
+  border-radius: 20vw;
+}
+
+.SUBMIT:hover {
+background-position: right;
+}
+
+.SUBMIT:hover:before {
+color: rgba(255,255,255,0.8);
+}
+
+.SUBMIT:focus {
+outline: none;
 }

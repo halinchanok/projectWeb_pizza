@@ -82,19 +82,40 @@
             <br><br>
             
             <div class="contop">
-            <h1 class="size">ขนาด</h1>
-            <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
-            <input class="s1" type="radio" class="size-s" id="size-S" name="order_size" value="S" required>
-            <img src="images/HAM.webp">
-            <label class="s" for="size-s">S</label>
-            <br>
-            <br>
-            <input class="m1" type="radio" id="size-M" name="order_size" value="M" required>
-            <label class="m" for="size-m">M</label>
-            <br>
-            <br>
-            <input class="l1" type="radio" id="size-L" name="order_size" value="L" required>
-            <label class="l" for="size-L">L</label>
+            <div class="radio-inputs">
+		<label>
+			<input class="radio-input" type="radio" name="engine">
+				<span class="radio-tile">
+					<span class="radio-icon">
+						<img class="PEP" src="images/PEPPERONII.webp"> 
+					</span>
+					<span class="radio-label">PEPPERONI</span>
+				</span>
+                
+		</label>
+        <br>
+		<label>
+			<input checked="" class="radio-input" type="radio" name="engine">
+			<span class="radio-tile">
+				<span class="radio-icon">
+   				<svg stroke="currentColor" xml:space="preserve" viewBox="0 0 467.168 467.168" id="Capa_1" version="1.1" fill="none">
+                   <img class="HAM" src="images/HAM.webp">
+				</span>
+				<span class="radio-label">HAM</span>
+			</span>
+		</label>
+        <br>
+		<label>
+			<input class="radio-input" type="radio" name="engine">
+			<span class="radio-tile">
+				<span class="radio-icon">
+                <img class="HAM" src="images/CHEESE.webp">
+				</span>
+
+				<span class="radio-label">CHEESE</span>
+			</span>
+		</label>
+</div>
             </div>
 
             <div class="containerP22">
