@@ -28,61 +28,73 @@
         </a>
         <img class="IEP" src="images/IT EAT PIZZA.png">
         
-        <div class="containerP2">
-            <form class="" action="" method="post" autocomplete="off">
+        <!--div class="containerP2"-->
+            <form class="PZ" action="" method="post" autocomplete="off">
             <!-- เลือกหน้าพิซซ่า -->
-            <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
-                <option class="img" value="images/Double pepperoni.webp">Double Pepperoni</option>
-                <option class="img" value="images/cheese pizza.webp">CHEESE PIZZA</option>
-                <option class="img" value="images/HAM&C.webp">HAM&CRAB STICKS</option>
-                <option class="img" value="images/TOM YUM KUNG.webp">TOM YUM KUNG</option>
-                <option class="img" value="images/MEAT DELUXE.webp">MEAT DELUXE</option>
-                <option class="img" value="images/SEAFOOD DELUXE.webp">SEAFOOD DELUXE</option>
-            </select>
+            
+                <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
+                <div class="container21">
+                  <div class="C">
+                    <option class="img" value="images/Double pepperoni.webp">Double Pepperoni</option>
+                    <option class="img" value="images/cheese pizza.webp">CHEESE PIZZA</option>
+                    <option class="img" value="images/HAM&C.webp">HAM&CRAB STICKS</option>
+                    <option class="img" value="images/TOM YUM KUNG.webp">TOM YUM KUNG</option>
+                    <option class="img" value="images/MEAT DELUXE.webp">MEAT DELUXE</option>
+                    <option class="img" value="images/SEAFOOD DELUXE.webp">SEAFOOD DELUXE</option>
+                 </div>
+                </div>
+                </select>
+            
             <br><br>
                 
                 <img class="img" id="img_order_name" src="images/Double pepperoni.webp" alt="Selected Image">
             <br><br>
 
             <!-- เลือก size -->
-            <h1 class="size">ขนาด</h1>
+            <div class="consize">
+            <h1 class="size">SIZE</h1>
             <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
-            <label class="s" for="size-s">S</label>
             <input class="s1" type="radio" class="size-s" id="size-S" name="order_size" value="S" required>
-            <label class="m" for="size-m">M</label>
+            <label class="s" for="size-s">S</label>
+            <br>
+            <br>
             <input class="m1" type="radio" id="size-M" name="order_size" value="M" required>
-            <label class="l" for="size-L">L</label>
+            <label class="m" for="size-m">M</label>
+            <br>
+            <br>
             <input class="l1" type="radio" id="size-L" name="order_size" value="L" required>
+            <label class="l" for="size-L">L</label>
+            
+            </div>
             <br>
 
             <!-- เลือกขอบ -->
-            <h1 class="crust">เลือกขอบ</h1>
+            <div class="concrust">
+            <br>
+            <h1 class="crust">CRUST</h1>
             <select class="edge" name="order_crust">
-                <option>ขอบหนานุ่ม</option>
-                <option>บางกรอบ</option>
-                <option>ขอบชีส</option>
-                <option>ขอบไส้กรอกชีส</option>
+                <option>PAN CRUST</option>
+                <option>CRISPY THIN</option>
+                <option>CHEESE CRUST</option>
+                <option>SAUSAGE&CHEESE CRUST</option>
             </select>
+            </div>
             <br><br>
             
-            <div class="containerP21">
-                <div class="Topping1">
-                    <img src="images/PEPPERONII.webp">
-                    <div class="PEP">PEPPERONI</div> 
-                    <button class="BT7" id="btn7"> ข้อความ </button>    
-                </div>
-                
-                <div class="Topping2">
-                    <img src="images/CHEESE.webp">
-                    <div class="CHE">CHEESE</div> 
-                    <button class="BT8" id="btn7"> ข้อความ </button>    
-                </div>
-
-                <div class="Topping3">
-                    <img src="images/HAM.webp">
-                    <div class="HAM">HAM</div> 
-                    <button class="BT9" id="btn7"> ข้อความ </button>    
-                </div>
+            <div class="contop">
+            <h1 class="size">ขนาด</h1>
+            <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
+            <input class="s1" type="radio" class="size-s" id="size-S" name="order_size" value="S" required>
+            <img src="images/HAM.webp">
+            <label class="s" for="size-s">S</label>
+            <br>
+            <br>
+            <input class="m1" type="radio" id="size-M" name="order_size" value="M" required>
+            <label class="m" for="size-m">M</label>
+            <br>
+            <br>
+            <input class="l1" type="radio" id="size-L" name="order_size" value="L" required>
+            <label class="l" for="size-L">L</label>
             </div>
 
             <div class="containerP22">
@@ -157,11 +169,13 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         <!-- <div id="main">
             <button class="openbtn" onclick="openNav()" methode="ch">&#9776; จ่ายตัง</button>
         </div>
 
+        
     </body>
     </html>
 <!DOCTYPE html>
