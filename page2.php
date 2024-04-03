@@ -107,19 +107,19 @@
         <div id="cart22" class="sidebar">
             <?php
                 // ตรวจสอบว่ามีข้อมูลใน session หรือไม่
-                if(isset($_SESSION['menu'])&&isset($_SESSION['size'])) {
+                if(isset($_SESSION['menu']) && isset($_SESSION['size']) && isset($_SESSION['crust'])) {
                     // แสดงผลข้อมูลที่เก็บใน session
                     if($_SESSION['menu'] == "images/cheese pizza.webp"){
                         echo "เมนู: " . "CHEESE PIZZA" . "<br>";
-                    }else if($_SESSION['menu'] == "images/cheese pizza.webp"){
-                        echo "เมนู: " . "CHEESE PIZZA" . "<br>";
-                    }else if($_SESSION['menu'] == "images/cheese pizza.webp"){
-                        echo "เมนู: " . "CHEESE PIZZA" . "<br>";
-                    }else if($_SESSION['menu'] == "images/cheese pizza.webp"){
-                        echo "เมนู: " . "CHEESE PIZZA" . "<br>";
-                    }else if($_SESSION['menu'] == "images/cheese pizza.webp"){
-                        echo "เมนู: " . "CHEESE PIZZA" . "<br>";
-                    }else echo "เมนู: " . "CHEESE PIZZA" . "<br>";
+                    }else if($_SESSION['menu'] == "images/Double pepperoni.webp"){
+                        echo "เมนู: " . "Double Pepperoni" . "<br>";
+                    }else if($_SESSION['menu'] == "images/HAM&C.webp"){
+                        echo "เมนู: " . "HAM&CRAB STICKS" . "<br>";
+                    }else if($_SESSION['menu'] == "images/TOM YUM KUNG.webp"){
+                        echo "เมนู: " . "TOM YUM KUNG" . "<br>";
+                    }else if($_SESSION['menu'] == "images/MEAT DELUXE.webp"){
+                        echo "เมนู: " . "MEAT DELUXE" . "<br>";
+                    }else echo "เมนู: " . "SEAFOOD DELUXE" . "<br>";
                     echo "ขนาด: " . $_SESSION['size'] . "<br>";
                     echo "ขอบ: " . $_SESSION['crust'] . "<br>";
                 } 
