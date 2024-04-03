@@ -27,6 +27,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+	margin-top: -20px;
 }
 /*เหลี่ยมแรกซ้ายมือบน*/
 .menu1 {
@@ -38,6 +39,7 @@ body {
     border-radius: 10px;
     margin: 50px;
     margin-top: 10px;
+	;	
 }
 
 .menu1 img{
@@ -55,6 +57,7 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     color:white;
 }
+
 /*ปุ่มราคา1*/
 .BT1 {
     -webkit-touch-callout: none;
@@ -489,3 +492,31 @@ body {
   	display: block;
   	margin-top: 10px;
 }
+
+.best {
+	width: 100px;
+	height: 100px;
+	margin-left: -1080px;
+	margin-top: -20px;
+	position: absolute;
+
+  }
+  .best2 {
+	width: 100px;
+	height: 100px;
+	margin-left: -270px;
+	margin-top: -20px;
+	position: absolute;
+
+  }
+
+  .best3 {
+	width: 100px;
+	height: 100px;
+	margin-left: 540px;
+	margin-top: -50px;
+	position: absolute;
+
+  }
+
+  
