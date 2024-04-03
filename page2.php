@@ -32,15 +32,14 @@
             <form class="" action="" method="post" autocomplete="off">
             <!-- เลือกหน้าพิซซ่า -->
             <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
-                <option class="img" value="images/cheese pizza.webp" alt="1">CHEESE PIZZA</option>
-                <option class="img" value="images/Double pepperoni.webp" alt="2">Double Pepperoni</option>
-                <option class="img" value="images/S__61104136_0.jpg" alt="3">HAM&CRAB STICKS</option>
-                <option class="img" value="images/S__61104136_0.jpg" alt="4">TOM YUM KUNG</option>
-                <option class="img" value="images/S__61104136_0.jpg" alt="5">MEAT DELUXE</option>
-                <option class="img" value="images/S__61104136_0.jpg" alt="6">SEAFOOD DELUXE</option>
+                <option class="img" value="images/cheese pizza.webp">CHEESE PIZZA</option>
+                <option class="img" value="images/Double pepperoni.webp">Double Pepperoni</option>
+                <option class="img" value="images/S__61104136_0.jpg">HAM&CRAB STICKS</option>
+                <option class="img" value="images/S__61104136_0.jpg">TOM YUM KUNG</option>
+                <option class="img" value="images/S__61104136_0.jpg">MEAT DELUXE</option>
+                <option class="img" value="images/S__61104136_0.jpg">SEAFOOD DELUXE</option>
             </select>
             <br><br>
-            
                 
                 <img class="img" id="img_order_name" src="images/Double pepperoni.webp" alt="Selected Image">
             <br><br>
@@ -161,7 +160,7 @@
         </div>
         <!-- <div id="main">
             <button class="openbtn" onclick="openNav()" methode="ch">&#9776; จ่ายตัง</button>
-        </div> -->
+        </div>
 
     </body>
     </html>

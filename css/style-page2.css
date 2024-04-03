@@ -125,7 +125,7 @@ outline: none;
 .containerP2 {
   background-color: #F3C959;
   width: 1200px;
-  height: 600px;
+  height: 580px;
   margin: 0 auto;
   border-radius: 20px;
 }
@@ -204,7 +204,7 @@ outline: none;
 .containerP21 {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 50px;
+  margin-left: 60px;
 }
 
 .Topping1 {
@@ -535,7 +535,7 @@ outline: none;
 }
 
 .openbtn {
-  margin-top: 50px;
+  margin-top: -40px;
   border-radius: 5px;
 }
 
@@ -544,6 +544,7 @@ outline: none;
 }
 
 .Pizza {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 800px;
 }
+
