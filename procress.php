@@ -3,18 +3,9 @@ require 'connection.php'; //เชื่อมต่อกับไฟล์ con
 
 session_start(); //ใช้ sesstion
 
-$_SESSION['username'] = 'JohnDoe';
-echo $_session['username'];
-
 $_session['order_name'] = $_post['order_name'];
 header('Location: page2.html');
 exit;
-if($server["Request_method"] == "ch"){
-    echo "hello";
-}
-if (!empty($_SESSION['username'])){
-    echo "hello";
-}
 
 
 // // page2
