@@ -21,7 +21,7 @@
         </div>
         <form class="" action="" method="post" autocomplete="off">
             <!-- เลือกหน้าพิซซ่า -->
-            <select id="order_name" name="order_name" onchange="changeImage()">
+            <select id="order_name" name="order_name" onchange="changeImage()" for="aa">
                 <option value="images/S__61104136_0.jpg">Double Cheese</option>
                 <option value="images/S__61104135_0.jpg">Double Pepperoni</option>
                 <option value="images/S__61104136_0.jpg">Hawaiian</option>
@@ -70,12 +70,13 @@
         <div id="cart22" class="sidebar">
             <?php
                 session_start(); //ใช้ sesstion
-                
-                if($server["Request_method"] == "ch"){
-                    $_SESSION['username'] = 'JohnDoe';
-                    echo $_session['username'];
-                }
-                
+                $_SESSION['aa'] = $_POST['aa'];
+                echo $_SESSION['username'];
+
+                // if($server["Request_method"] == "ch"){
+                //     $_SESSION['username'] = 'JohnDoe';
+                //     echo $_session['username'];
+                // }
             ?>
 
             <div class="cart22_container">
