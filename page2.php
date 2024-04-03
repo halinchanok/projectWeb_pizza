@@ -11,7 +11,7 @@
     <body>
         <script src="script.js"></script> <!-- JS -->
 
-        <a href="page1_menu.html" target="_self">
+        <a href="page1_menu.php" target="_self">
             <button class="BACK">back</button>
         </a>
         <img class="IEP" src="images/IT EAT PIZZA.png">
