@@ -7,7 +7,7 @@
     <script>
         document.addEventListener('click', function(event) {
             // รับ URL ที่ต้องการเปิด
-            var url = 'page1_menu.html'; // เปลี่ยนเป็น URL ที่ต้องการไป 
+            var url = 'page1_menu.php'; // เปลี่ยนเป็น URL ที่ต้องการไป 
             window.location.href = url;
         });
     </script>
