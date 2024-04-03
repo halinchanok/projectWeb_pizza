@@ -19,16 +19,16 @@
         <div class="containerP2">
             <form class="" action="" method="post" autocomplete="off">
             <!-- เลือกหน้าพิซซ่า -->
-            <select id="order_name" name="order_name" onchange="changeImage()">
-                <option value="images/S__61104136_0.jpg">Double Cheese</option>
-                <option value="images/S__61104135_0.jpg">Double Pepperoni</option>
-                <option value="images/S__61104136_0.jpg">Hawaiian</option>
-                <option value="images/S__61104136_0.jpg">Seafood Cocktail</option>
-                <option value="images/S__61104136_0.jpg">Ham&Crab Sticks</option>
-                <option value="images/S__61104136_0.jpg">4 Cheese & Bacon</option>
+            <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
+                <option class="img" value="images/cheese pizza.webp">CHEESE PIZZA</option>
+                <option class="img" value="images/Double pepperoni.webp">Double Pepperoni</option>
+                <option class="img" value="images/S__61104136_0.jpg">HAM&CRAB STICKS</option>
+                <option class="img" value="images/S__61104136_0.jpg">TOM YUM KUNG</option>
+                <option class="img" value="images/S__61104136_0.jpg">MEAT DELUXE</option>
+                <option class="img" value="images/S__61104136_0.jpg">SEAFOOD DELUXE</option>
             </select>
             <br><br>
-
+                
                 <img class="img" id="img_order_name" src="images/Double pepperoni.webp" alt="Selected Image">
             <br><br>
 
@@ -44,7 +44,7 @@
             <br>
 
             <!-- เลือกขอบ -->
-            <h1>เลือกขอบ</h1>
+            <h1 class="crust">เลือกขอบ</h1>
             <select class="edge">
                 <option>ขอบหนานุ่ม</option>
                 <option>บางกรอบ</option>

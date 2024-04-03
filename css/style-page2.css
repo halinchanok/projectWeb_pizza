@@ -134,59 +134,59 @@ outline: none;
   margin-left: 30px;
   color: white;
   float: left;
-  margin-top: 10px;
+  margin-top: -40px;
 }
 .s {
   margin-left: -50px;
   color: white;
   float: left;
   font-size: 30px;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 .s1 {
   margin-left: -20px;
   color: white;
   float: left;
   font-size: 30px;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 .m {
   margin-left: 5px;
   color: white;
   float: left;
   font-size: 30px;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 .m1 {
   margin-left: 15px;
   color: white;
   float: left;
   font-size: 30px;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 .l {
   margin-left: 15px;
   color: white;
   float: left;
   font-size: 30px;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 .l1 {
   margin-left: 15px;
   color: white;
   float: left;
   font-size: 30px;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 .crust {
   margin-left: 30px;
   color: white;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .img {
   float: right;
-  width: 700px; /*800*/
-  margin-right: -30px;
+  width: 600px; /*800*/
+  margin-right: 40px;
 }
 
 .edge {
@@ -238,10 +238,11 @@ outline: none;
   justify-content: center;
   border: 2px solid #D12024;
   margin-top: 10px;
-  width: 150px;
-  height: 30px;
+  width: 155px;
+  height: 40px;
   background-color: #D12024;
   border-radius: 10px;
+  
 }
 .BT7:active {
   background-color: #EEEADF;
@@ -288,8 +289,8 @@ outline: none;
   justify-content: center;
   border: 2px solid #D12024;
   margin-top: 10px;
-  width: 150px;
-  height: 30px;
+  width: 155px;
+  height: 40px;
   background-color: #D12024;
   border-radius: 10px;
 }
@@ -338,8 +339,8 @@ outline: none;
   justify-content: center;
   border: 2px solid #D12024;
   margin-top: 10px;
-  width: 150px;
-  height: 30px;
+  width: 155px;
+  height: 40px;
   background-color: #D12024;
   border-radius: 10px;
 }
@@ -540,4 +541,9 @@ outline: none;
 
 .sidebar {
   border-radius: 20px;
+}
+
+.Pizza {
+  margin-top: 40px;
+  margin-left: 800px;
 }
