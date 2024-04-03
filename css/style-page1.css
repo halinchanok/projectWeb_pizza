@@ -482,3 +482,10 @@ body {
 .BT6:focus {
 	outline: none;
 }
+.HEAD {
+	width: 1100px;
+  	height: auto;
+  	margin: 0 auto;
+  	display: block;
+  	margin-top: 10px;
+}
