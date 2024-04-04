@@ -234,8 +234,8 @@
 
                     <br>
                     <p class='left'>-----------------------------------------------------</p><br>
-                    <br><p class='left'>-----------------------------------------------------</p><br>
->>>>>>> 5eede6a65d7306b741aee41be2259b58058737f5
+                    <br>
+
                 <?php
                     if(isset($_SESSION['menu2']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
                         echo "<div class='right'>1 ชิ้น</div><br>";
