@@ -30,7 +30,7 @@
         
         <!--div class="containerP2"-->
             <form class="PZ" action="" method="post" autocomplete="off">
-            <!-- เลือกหน้าพิซซ่า -->
+                <!-- เลือกหน้าพิซซ่า -->
             
                 <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
                 <div class="container21">
@@ -45,61 +45,58 @@
                 </div>
                 </select>
             
-            <br><br>
+                <br><br> 
+                    <img class="img" id="img_order_name" src="images/Double pepperoni.webp" alt="Selected Image">
+                <br><br>
+
+                <!-- เลือก size -->
+                <div class="consize">
+                    <h1 class="size">SIZE</h1>
+                    <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
+                    <input class="s1" type="radio" class="size-s" id="size-S" name="order_size" value="S" required>
+                    <label class="s" for="size-s">S</label>
+                    <br>
+                    <br>
+                    <input class="m1" type="radio" id="size-M" name="order_size" value="M" required>
+                    <label class="m" for="size-m">M</label>
+                    <br>
+                    <br>
+                    <input class="l1" type="radio" id="size-L" name="order_size" value="L" required>
+                    <label class="l" for="size-L">L</label>
+                </div>
+                <br>
+
+                <!-- เลือกขอบ -->
+                <div class="concrust">
+                <br>
+                <h1 class="crust">CRUST</h1>
+                <select class="edge" name="order_crust">
+                    <option>PAN CRUST</option>
+                    <option>CRISPY THIN</option>
+                    <option>CHEESE CRUST</option>
+                    <option>SAUSAGE&CHEESE CRUST</option>
+                </select>
+                </div>
+                <br><br>
                 
-                <img class="img" id="img_order_name" src="images/Double pepperoni.webp" alt="Selected Image">
-            <br><br>
-
-            <!-- เลือก size -->
-            <div class="consize">
-            <h1 class="size">SIZE</h1>
-            <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
-            <input class="s1" type="radio" class="size-s" id="size-S" name="order_size" value="S" required>
-            <label class="s" for="size-s">S</label>
-            <br>
-            <br>
-            <input class="m1" type="radio" id="size-M" name="order_size" value="M" required>
-            <label class="m" for="size-m">M</label>
-            <br>
-            <br>
-            <input class="l1" type="radio" id="size-L" name="order_size" value="L" required>
-            <label class="l" for="size-L">L</label>
-            
-            </div>
-            <br>
-
-            <!-- เลือกขอบ -->
-            <div class="concrust">
-            <br>
-            <h1 class="crust">CRUST</h1>
-            <select class="edge" name="order_crust">
-                <option>PAN CRUST</option>
-                <option>CRISPY THIN</option>
-                <option>CHEESE CRUST</option>
-                <option>SAUSAGE&CHEESE CRUST</option>
-            </select>
-            </div>
-            <br><br>
-            
             <div class="contop">
             <div class="radio-inputs">
-		<label>
-			<input class="radio-input" type="radio" name="engine">
-				<span class="radio-tile">
-					<span class="radio-icon">
-						<img class="PEP" src="images/PEPPERONII.webp"> 
-					</span>
-					<span class="radio-label">PEPPERONI</span>
-				</span>
-                
-		</label>
-        <br>
+            <label>
+                <input class="radio-input" type="radio" name="engine">
+                    <span class="radio-tile">
+                        <span class="radio-icon">
+                            <img class="PEP" src="images/PEPPERONII.webp"> 
+                        </span>
+                        <span class="radio-label">PEPPERONI</span>
+                    </span>
+            </label>
+            <br>
 		<label>
 			<input checked="" class="radio-input" type="radio" name="engine">
 			<span class="radio-tile">
 				<span class="radio-icon">
-   				<svg stroke="currentColor" xml:space="preserve" viewBox="0 0 467.168 467.168" id="Capa_1" version="1.1" fill="none">
-                   <img class="HAM" src="images/HAM.webp">
+   				    <svg stroke="currentColor" xml:space="preserve" viewBox="0 0 467.168 467.168" id="Capa_1" version="1.1" fill="none">
+                    <img class="HAM" src="images/HAM.webp">
 				</span>
 				<span class="radio-label">HAM</span>
 			</span>
@@ -111,11 +108,10 @@
 				<span class="radio-icon">
                 <img class="HAM" src="images/CHEESE.webp">
 				</span>
-
 				<span class="radio-label">CHEESE</span>
 			</span>
 		</label>
-</div>
+        </div>
             </div>
 
             <div class="containerP22">
@@ -131,7 +127,6 @@
             <div id="main">
                 <button class="openbtn" type="submit" onclick="openNav()" methode="ch">&#9776; จ่ายตัง</button>
             </div>
-        
         
         </form>
         <br><br>
@@ -187,10 +182,6 @@
             </div>
             
         </div>
-        <!-- <div id="main">
-            <button class="openbtn" onclick="openNav()" methode="ch">&#9776; จ่ายตัง</button>
-        </div>
-
     </body>
-    </html>
+</html>
 <!DOCTYPE html>
