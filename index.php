@@ -1,3 +1,7 @@
+<?php
+    require 'lang_page1.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +26,6 @@
   
     <div class="Language"> 
         <form>
-            
             <select name="Language" class="language">
                 <img class="Flag-Thailand" src="images/Flag-Thailand.webp">
                 <option value="thai">TH</option>
