@@ -59,8 +59,8 @@
     $lang_sau = $sau[$lang];
 
     // CHEESE2
-    $cheese = array('th' => 'ชีส', 'en' => 'CHEESE');
-    $lang_cheese = $cheese[$lang];
+    $cheese2 = array('th' => 'ชีส', 'en' => 'CHEESE');
+    $lang_cheese2 = $cheese2[$lang];
 
     // HAM
     $ham = array('th' => 'แฮม', 'en' => 'HAM');

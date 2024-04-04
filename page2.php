@@ -161,7 +161,7 @@
                         <span class="radio-icon">
                         <img class="HAM" src="images/CHEESE.webp" >
                         </span>
-                        <span class="radio-label"><?php echo $lang_cheese; ?></span>
+                        <span class="radio-label"><?php echo $lang_cheese2; ?></span>
                     </span>
                 </label>
 
