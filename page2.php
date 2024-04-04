@@ -1,5 +1,6 @@
 <?php
     require 'connection.php';
+    require 'lang_page2.php';
     session_start();
 
 
@@ -68,15 +69,8 @@
         <script src="script.js"></script> <!-- JS -->
         
         <!-- ปุ่มเปลี่ยนภาษา -->
-        <div class="Language"> 
-            <form>
-                <select name="Language" class="language">
-                    <img class="Flag-Thailand" src="images/Flag-Thailand.webp">
-                    <option value="thai">TH</option>
-                    <option value="english">EN</option>
-                </select>
-            </form>
-        </div>
+        <a href="page2.php?lang=en">en</a>
+        <a href="page2.php?lang=th">th</a>
 
         <a href="page1_menu.php" target="_self">
             <button class="BACK">back</button>
@@ -90,12 +84,12 @@
                 <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
                 <div class="container21">
                   <div class="C">
-                    <option class="img" value="images/Double pepperoni.webp">Double Pepperoni</option>
-                    <option class="img" value="images/cheese pizza.webp">CHEESE PIZZA</option>
-                    <option class="img" value="images/HAM&C.webp">HAM&CRAB STICKS</option>
-                    <option class="img" value="images/TOM YUM KUNG.webp">TOM YUM KUNG</option>
-                    <option class="img" value="images/MEAT DELUXE.webp">MEAT DELUXE</option>
-                    <option class="img" value="images/SEAFOOD DELUXE.webp">SEAFOOD DELUXE</option>
+                    <option class="img" value="images/Double pepperoni.webp"><?php echo $lang_pepperoni; ?></option>
+                    <option class="img" value="images/cheese pizza.webp"><?php echo $lang_cheese; ?></option>
+                    <option class="img" value="images/HAM&C.webp"><?php echo $lang_ham; ?></option>
+                    <option class="img" value="images/TOM YUM KUNG.webp"><?php echo $lang_tomyum; ?></option>
+                    <option class="img" value="images/MEAT DELUXE.webp"><?php echo $lang_deluxe; ?></option>
+                    <option class="img" value="images/SEAFOOD DELUXE.webp"><?php echo $lang_seafood; ?></option>
                  </div>
                 </div>
                 </select>
@@ -106,7 +100,7 @@
 
                 <!-- เลือก size -->
                 <div class="consize">
-                    <h1 class="size">SIZE</h1>
+                    <h1 class="size"><?php echo $lang_size; ?></h1>
                     <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
                     <input class="s1" type="radio" class="size-s" id="size-S" name="order_size" value="S" required>
                     <label class="s" for="size-s">S</label>
@@ -124,12 +118,12 @@
                 <!-- เลือกขอบ -->
                 <div class="concrust">
                 <br>
-                <h1 class="crust">CRUST</h1>
+                <h1 class="crust"><?php echo $lang_crust; ?></h1>
                 <select class="edge" name="order_crust">
-                    <option value='Pan Crust'>PAN CRUST</option>
-                    <option value='Crispy Thin'>CRISPY THIN</option>
-                    <option value='Cheese Crust'>CHEESE CRUST</option>
-                    <option value='Sausage&Cheese Crust'>SAUSAGE&CHEESE CRUST</option>
+                    <option value='Pan Crust'><?php echo $lang_pan; ?></option>
+                    <option value='Crispy Thin'><?php echo $lang_crispy; ?></option>
+                    <option value='Cheese Crust'><?php echo $lang_cheese; ?></option>
+                    <option value='Sausage&Cheese Crust'><?php echo $lang_sau; ?></option>
                 </select>
                 </div>
                 <br><br>
@@ -144,7 +138,7 @@
                             <span class="radio-icon" >
                                 <img class="PEP" src="images/PEPPERONII.webp" > 
                             </span>
-                            <span class="radio-label">PEPPERONI</span>
+                            <span class="radio-label"><?php echo $lang_pepperoni; ?></span>
                         </span>
                 </label>
                 <br>
@@ -156,7 +150,7 @@
                             <svg stroke="currentColor" xml:space="preserve" viewBox="0 0 467.168 467.168" id="Capa_1" version="1.1" fill="none">
                             <img class="HAM" src="images/HAM.webp">
                         </span>
-                        <span class="radio-label">HAM</span>
+                        <span class="radio-label"><?php echo $lang_ham; ?></span>
                     </span>
                 </label>
                 <br>
@@ -167,7 +161,7 @@
                         <span class="radio-icon">
                         <img class="HAM" src="images/CHEESE.webp" >
                         </span>
-                        <span class="radio-label">CHEESE</span>
+                        <span class="radio-label"><?php echo $lang_cheese; ?></span>
                     </span>
                 </label>
 
@@ -185,7 +179,7 @@
                     <button class="SUBMIT" type="submit" onclick="page3.html">submit</button>
                     </div>
                     <div id="main">
-                        <button class="openbtn" type="submit" onclick="openNav()" methode="ch">&#9776; ORDER SUMMARY</button>
+                        <button class="openbtn" type="submit" onclick="openNav()" methode="ch">&#9776; <?php echo $lang_order; ?></button>
                     </div>
         
             </form>
@@ -196,7 +190,7 @@
             <br><br>
             <div class="cart22_container">
                 <div class="cart22_header">
-                    <div class="center">สินค้าในตะกร้า</div>
+                    <div class="center"><?php echo $lang_item; ?></div>
                     <div class='left'>-----------------------------------------------------</div><br>
                 </div>
                     <?php
@@ -228,7 +222,7 @@
                         echo $_SESSION['crust'];
                     } 
                     else {
-                        echo "<div class='left1'>ขออภัย ขณะนี้ไม่มีสินค้าในตะกร้า</div>";
+                        echo "<div class='left1'>". $lang_sorry ."</div>";
                     }
                     ?>
 
@@ -238,12 +232,12 @@
 
                 <?php
                     if(isset($_SESSION['menu2']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
-                        echo "<div class='right'>1 ชิ้น</div><br>";
-                        echo "<div class='right'>ราคารวม</div>";
+                        echo "<div class='right'>1 ". $lang_pieces ."</div><br>";
+                        echo "<div class='right'>".$lang_total."</div>";
                         echo "<div class='right'>฿". $_SESSION['sum_price'] .".00</div>";
                     }else{
-                        echo "<div class='right'>0 ชิ้น</div><br>";
-                        echo "<div class='right'>ราคารวม</div>";
+                        echo "<div class='right'>0 ". $lang_pieces ."</div><br>";
+                        echo "<div class='right'>".$lang_total."</div>";
                         echo "<div class='right'>฿0.00</div>";
                     }
                 ?>
@@ -260,7 +254,7 @@
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
                     <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
                     </svg>
-                        PAYMENT
+                        <?php echo  $lang_pay; ?>
                 </button>
                 </div>
                 
