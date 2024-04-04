@@ -11,7 +11,7 @@
         <img class="payment" src="images/payment.png">
 
         <div class="prompay">
-
+            
         </div>
     </body>
 </html>
