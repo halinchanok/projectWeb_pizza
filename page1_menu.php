@@ -31,6 +31,8 @@
         <!-- ปุ่มเปลี่ยนภาษา -->
         <a href="page1_menu.php?lang=en">en</a>
         <a href="page1_menu.php?lang=th">th</a>
+
+        <!-- เลือกหน้าพิซซ่า -->
         <div class="container">
             <img class="best" src="images/bestsell.png">
             <img class="best2" src="images/bestsell.png">
@@ -69,7 +71,7 @@
         </div>
 
         <br>
-            
+
         <div class="container2">
             <img class="best3" src="images/bestsell.png">
             <div class="menu">
