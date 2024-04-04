@@ -4,6 +4,7 @@
     $_SESSION['size'] = null;
     $_SESSION['crust'] = null;
     $_SESSION['topping'] = null;
+    $_SESSION['sum_price'] = 0;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['menu1'] = $_POST['order_name'];

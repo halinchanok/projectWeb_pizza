@@ -188,7 +188,7 @@
                     <div class="center">สินค้าในตะกร้า</div>
                     <div class='left'>-----------------------------------------------------</div><br>
                 </div>
-                <?php
+                    <?php
                     // ตรวจสอบว่ามีข้อมูลใน session หรือไม่
                     if(isset($_SESSION['menu2']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
                         // แสดงผลข้อมูลที่เก็บใน session
@@ -215,33 +215,24 @@
 
                         echo "<div class='left1'>";
                         echo $_SESSION['crust'];
-                        echo "</div>";
                     } 
                     else {
-                        echo "ขออภัย ขณะนี้ไม่มีสินค้าในตะกร้า <br>";
+                        echo "<div class='left1'>ขออภัย ขณะนี้ไม่มีสินค้าในตะกร้า</div>";
+                    }
+                    ?>
+                    <br>
+                    <p class='left'>-----------------------------------------------------</p><br>
+                <?php
+                    if(isset($_SESSION['menu2']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
+                        echo "<div class='right'>1 ชิ้น</div><br>";
+                        echo "<div class='right'>ราคารวม</div>";
+                        echo "<div class='right'>฿". $_SESSION['sum_price'] .".00</div>";
+                    }else{
+                        echo "<div class='right'>0 ชิ้น</div><br>";
+                        echo "<div class='right'>ราคารวม</div>";
+                        echo "<div class='right'>฿0.00</div>";
                     }
                 ?>
-                <br>
-                <div class='left'>-----------------------------------------------------</div><br>
-                <div class="cart22_tailer">
-                    <div class="cart22_summary">
-                        <div class="cart22_summary_label">
-                            <br>
-                            <div class="right">0 ชิ้น</div>
-                        </div>
-                        <div class="cart22_summary_amount">
-                            <div class="left">ราคารวม</div>
-                            <div class='right'>฿<?php echo $_SESSION['sum_price'];?></div>
-                        </div><br><br>
-                    </div>
-                    <div class="cart22_action">
-                        <div class="cart22_countinue">
-                            <span style="transform: rotate(180deg) ; display: inline-block;">⟶</span>
-                            เลือกสินค้าเพิ่มเติม<br><br>
-                        </div>
-                        <div class="cart22_button cart22_checkout" style="background-color: rgb(156, 39, 176);">จ่ายตัง</div>
-                    </div>
-                </div>
             </div>
             
         </div>
