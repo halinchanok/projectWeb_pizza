@@ -3,6 +3,7 @@
     $_SESSION['menu1'] = null;
     $_SESSION['size'] = null;
     $_SESSION['crust'] = null;
+    $_SESSION['topping'] = null;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['menu1'] = $_POST['order_name'];
