@@ -1,4 +1,5 @@
 <?php
+    require 'lang_page1.php';
     session_start();
     $_SESSION['menu1'] = null;
     $_SESSION['size'] = null;
@@ -27,13 +28,15 @@
         <script src="script.js"></script>
         <IMG class="HEAD" src="images/menu.png">
 
-
+        <!-- ปุ่มเปลี่ยนภาษา -->
+        <a href="page1_menu.php?lang=en">en</a>
+        <a href="page1_menu.php?lang=th">th</a>
         <div class="container">
             <img class="best" src="images/bestsell.png">
             <img class="best2" src="images/bestsell.png">
             <div class="menu1">
                 <img src="images/cheese pizza.webp">
-                <div class="cs">CHEESE PIZZA</div>
+                <div class="cs"><?php echo $lang_cheese; ?></div>
                 <button class="BT1" id="btn1"> ข้อความ </button>    
             </div>
             <script>
@@ -44,7 +47,7 @@
                 
             <div class="menu2">
                 <img src="images/Double pepperoni.webp">
-                <div class="cs">DOUBLE PEPPERONI</div>
+                <div class="cs"><?php echo $lang_pepperoni; ?></div>
                 <button class="BT2" id="btn2"> ข้อความ </button>    
             </div>
             <script>
@@ -55,7 +58,7 @@
 
             <div class="menu3">
                 <img src="images/HAM&C.webp">
-                <div class="cs">HAM&CRAB STICKS</div> 
+                <div class="cs"><?php echo $lang_ham; ?></div> 
                 <button class="BT3" id="btn3"> ข้อความ </button>    
             </div>
             <script>
@@ -71,7 +74,7 @@
             <img class="best3" src="images/bestsell.png">
             <div class="menu">
                 <img src="images/MEAT DELUXE.webp">
-                <div class="cs">MEAT DELUXE</div> 
+                <div class="cs"><?php echo $lang_deluxe; ?></div> 
                 <button class="BT4" id="btn4"> ข้อความ </button>    
             </div>
             <script>
@@ -81,7 +84,7 @@
             </script>
             <div class="menu">
                 <img src="images/TOM YUM KUNG.webp">
-                <div class="cs">TOM YUM KUNG</div> 
+                <div class="cs"><?php echo $lang_tomyum; ?></div> 
                 <button class="BT5" id="btn5"> ข้อความ </button>    
             </div>
             <script>
@@ -92,7 +95,7 @@
 
             <div class="menu">
                 <img src="images/SEAFOOD DELUXE.webp">
-                <div class="cs">SEAFOOD DELUXE</div> 
+                <div class="cs"><?php echo $lang_seafood; ?></div> 
             <button class="BT6" id="btn6"> ข้อความ </button>    
             </div>
             <script>

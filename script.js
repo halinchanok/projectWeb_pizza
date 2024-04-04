@@ -1,6 +1,15 @@
 // page1
+function changeLanguage() {
+  var langSelect = document.getElementById("lang-select");
+  var selectedLang = langSelect.value;
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.split('?')[0] + '?lang=' + selectedLang;
+  window.location.href = page1_menu.php; // ทำการ redirect ไปยัง URL ใหม่
+}
 
-
+document.getElementById("lang-select").addEventListener("change", function() {
+  document.getElementById("language-form").submit();
+});
 
 // page2 -----------------------------------------------------------------------------
 function changeImage() {
