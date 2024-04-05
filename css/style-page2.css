@@ -580,7 +580,7 @@ outline: none;
   border: none;
   margin-bottom: 50%;
   margin-left: 20px;
-  
+  width: 460px;
   
 }
 
@@ -615,3 +615,4 @@ outline: none;
     transform: rotatey(360deg);
   }
 }
+

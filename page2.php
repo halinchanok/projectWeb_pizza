@@ -3,8 +3,6 @@
     require 'lang_page2.php';
     session_start();
 
-    echo $_SESSION['menu1'];
-
     $_SESSION['menu2'] = $_SESSION['menu1'];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -174,13 +172,12 @@
 
                     <div class="containerP22">
                     <!-- ปุ่มเลือกเมนูเพิ่ม -->
-                    <button class="ADD" type="">add</button>
+                    <button class="ADD" >add</button>
 
                     <!-- ปุ่มล้างข้อมูล -->
                     <button class="RESET" type="reset">clear</button>
 
                     <!-- ปุ่มยืนยัน -->
-                    <button class="SUBMIT" type="submit" onclick="page3.html">submit</button>
                     </div>
                     <div id="main">
                         <button class="openbtn" type="submit" onclick="openNav()" methode="ch">&#9776; <?php echo $lang_order; ?></button>
@@ -250,10 +247,8 @@
                         echo "<div class='left1'>". $lang_sorry ."</div>";
                     }
                     ?>
+                <br><br><br>
 
-                    <br>
-                    <p class='left'>-----------------------------------------------------</p><br>
-                    <br>
 
                 <?php
                     if(isset($_SESSION['menu2']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
@@ -267,7 +262,6 @@
                     }
                 ?>
                 <br><br>
-                <div class='right'>
                 <button type="button" class="button" id="top3">
                 <script>
                     document.getElementById('top3').addEventListener('click', function() {
@@ -281,7 +275,6 @@
                     </svg>
                         <?php echo  $lang_pay; ?>
                 </button>
-                </div>
                 
 
             </div>
