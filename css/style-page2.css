@@ -580,6 +580,8 @@ outline: none;
   border: none;
   margin-bottom: 50%;
   margin-left: 20px;
+  
+  
 }
 
 .button:hover {
@@ -594,8 +596,8 @@ outline: none;
 
 .button svg {
   display: inline;
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 2rem;
+  height: 2rem;
   margin-right: 0.75rem;
   color: #F3C959;
 }
@@ -613,4 +615,3 @@ outline: none;
     transform: rotatey(360deg);
   }
 }
-
