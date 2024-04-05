@@ -254,7 +254,7 @@
                     }
                 ?>
                 <br><br>
-                <div class='right'>
+                
                 <button type="button" class="button" id="top3">
                 <script>
                     document.getElementById('top3').addEventListener('click', function() {
@@ -268,7 +268,7 @@
                     </svg>
                         <?php echo  $lang_pay; ?>
                 </button>
-                </div>
+                
                 
 
             </div>
