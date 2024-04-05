@@ -1,15 +1,167 @@
-.body {
-    background-color: #F3C959;
+body {
+    background-color: #F6E2A4;
 }
-
-.payment {
-    width: 1100px;
+  
+.pay {
+    max-width: 70%;
     height: auto;
-    margin: 0 auto;
-    display: block;
-    margin-top: 80px;
+    margin-left: 15%;
+    margin-top: 3%;
+  }
+
+.prom {
+    width: 250px;
+    margin-top: 10%;
+  }
+.conprom {
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    margin-left: 30%;
+    border-radius: 20px;
+    margin-top: 3%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-prompay {
-    background-color: black;
+.cash {
+    width: 250px;
+    margin-top: 3%;
+  }
+.concash {
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    margin-left: 50%;
+    border-radius: 20px;
+    position: absolute;
+    margin-top: -12.9%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
+.btnprom {
+    --color: #211275;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    border: none;
+    background-color: transparent;
+    margin-left: 32.5%;
+    margin-top: 1%
+  }
+  
+  .btnprom div {
+    letter-spacing: 2px;
+    font-weight: bold;
+    background: var(--color);
+    border-radius: 2rem;
+    color: rgb(247, 246, 255);
+    padding: 1rem;
+  }
+  
+  .btnprom::before {
+    content: '';
+    z-index: -1;
+    background-color: var(--color);
+    border: 2px solid white;
+    border-radius: 2rem;
+    width: 110%;
+    height: 100%;
+    position: absolute;
+    transform: rotate(10deg);
+    transition: .5s;
+    opacity: 0.2;
+  }
+  
+  .btnprom:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    transform: scale(1.1);
+  }
+  
+  .btnprom:hover::before {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  
+  .btnprom svg {
+    transform: translateX(-200%);
+    transition: .5s;
+    width: 0;
+    opacity: 0;
+  }
+  
+  .btnprom:hover svg {
+    width: 25px;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  
+  .btnprom:active {
+    filter: brightness(1.4);
+  }
+
+  .btncash {
+    --color: #136324;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    border: none;
+    background-color: transparent;
+    margin-left: 52.5%;
+    margin-top: 1%
+  }
+  
+  .btncash div {
+    letter-spacing: 2px;
+    font-weight: bold;
+    background: var(--color);
+    border-radius: 2rem;
+    color: rgb(247, 246, 255);
+    padding: 1rem;
+  }
+  
+  .btncash::before {
+    content: '';
+    z-index: -1;
+    background-color: var(--color);
+    border: 2px solid white;
+    border-radius: 2rem;
+    width: 110%;
+    height: 100%;
+    position: absolute;
+    transform: rotate(10deg);
+    transition: .5s;
+    opacity: 0.2;
+  }
+  
+  .btncash:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    transform: scale(1.1);
+  }
+  
+  .btncash:hover::before {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  
+  .btncash svg {
+    transform: translateX(-200%);
+    transition: .5s;
+    width: 0;
+    opacity: 0;
+  }
+  
+  .btncash:hover svg {
+    width: 25px;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  
+  .btncash:active {
+    filter: brightness(1.4);
+  }
