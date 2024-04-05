@@ -1,15 +1,4 @@
 // page1
-function changeLanguage() {
-  var langSelect = document.getElementById("lang-select");
-  var selectedLang = langSelect.value;
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.split('?')[0] + '?lang=' + selectedLang;
-  window.location.href = page1_menu.php; // ทำการ redirect ไปยัง URL ใหม่
-}
-
-document.getElementById("lang-select").addEventListener("change", function() {
-  document.getElementById("language-form").submit();
-});
 
 // page2 -----------------------------------------------------------------------------
 function changeImage() {
@@ -21,6 +10,7 @@ function changeImage() {
 
 // เปิดปิดเเท็บจ่ายตัง
 let ch = 0;
+
 function openNav() {
   if(ch == 0){
     document.getElementById("cart22").style.width = "480px"; //เวลากดปุ่มจ่ายตังจะให้มันเลื่อนออกมาเท่าไหร่

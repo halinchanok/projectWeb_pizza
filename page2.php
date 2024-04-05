@@ -3,6 +3,7 @@
     require 'lang_page2.php';
     session_start();
 
+    $_SESSION['menu2'] = $_SESSION['menu1'];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // รับค่าที่ส่งมาจาก form
@@ -66,7 +67,7 @@
 
 
     <body>
-        <script src="script.js"></script> <!-- JS -->
+        <script src="script.js"></script><!-- JS -->
         
         <!-- ปุ่มเปลี่ยนภาษา -->
         <a href="page2.php?lang=en">en</a>
@@ -198,7 +199,18 @@
                     if(isset($_SESSION['menu2']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
                         // แสดงผลข้อมูลที่เก็บใน session
                         echo "<div class='left'> x1 ";
-                        echo $_SESSION['menu2'];
+                        if($_SESSION['menu2'] == "CHEESE PIZZA"){
+                            echo $lang_cheese;
+                        }else if($_SESSION['menu2'] == "DOUBLE PEPPERONI"){
+                            echo $lang_pepperoni;
+                        }else if($_SESSION['menu2'] == "HAM&CRAB STICKS"){
+                            echo $lang_ham;
+                        }else if($_SESSION['menu2'] == "MEAT DELUXE"){
+                            echo $lang_deluxe;
+                        }else if($_SESSION['menu2'] == "TOM YUM KUNG"){
+                            echo $lang_tomyum;
+                        }else echo $lang_seafood;
+                        
                         echo "</div>"; 
                         echo "<div class='right'>";
                         echo $_SESSION['menu_price'];
