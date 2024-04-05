@@ -1,5 +1,6 @@
 <?php
     require 'lang_page1.php';
+
     session_start();
     $_SESSION['menu1'] = null;
     $_SESSION['size'] = null;
@@ -7,13 +8,8 @@
     $_SESSION['topping'] = null;
     $_SESSION['sum_price'] = 0;
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $_SESSION['menu1'] = $_POST['order_name'];
+    $_SESSION['menu1'] = 'AA';
 
-        // Redirect to next page after saving data in session
-        header("Location: page2.php");
-        exit();
-    }
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +32,8 @@
         <div class="container">
             <img class="best" src="images/bestsell.png">
             <img class="best2" src="images/bestsell.png">
-            <div class="menu1">
+
+            <div class="menu1"  method="post">
                 <img src="images/cheese pizza.webp">
                 <div class="cs"><?php echo $lang_cheese; ?></div>
                 <button class="BT1" id="btn1"> ข้อความ </button>    
@@ -47,7 +44,7 @@
                 });
             </script>
                 
-            <div class="menu2">
+            <div class="menu2"  method="post">
                 <img src="images/Double pepperoni.webp">
                 <div class="cs"><?php echo $lang_pepperoni; ?></div>
                 <button class="BT2" id="btn2"> ข้อความ </button>    

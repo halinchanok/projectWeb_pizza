@@ -1,3 +1,21 @@
+<?php
+    $host='localhost';
+    $user='root';
+    $pass=''; 
+    $db='pizzastore'; 
+    $conn= mysqli_connect($host,$user,$pass,$db); //เชื่อมต่อ serrver database
+
+    if(isset($_POST["submit"])){
+        $menu_id = 'M01'; 
+        $size = 'S'; 
+        $crust_id = 'C01'; 
+        $topping_id = 'T01'; 
+        
+        $query = "INSERT INTO orderpizza VALUES ('', '$menu_id', '$size', '$crust_id', '$topping_id')";
+        mysqli_query($conn, $query);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="th">
     <head>
@@ -15,7 +33,9 @@
         <div class="concash">
             <img class="cash" src="images/cashhh.png">
         </div>
-        <button class="btnprom" id="p4">
+
+        <form method="post">
+        <button type="submit" name="submit" class="btnprom" id="p4" >
         <script>
             document.getElementById('p4').addEventListener('click', function() {
             window.location.href = 'page4.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
@@ -31,7 +51,7 @@
         </button>
         
 
-        <button class="btncash">
+        <button type="submit" name="submit" class="btncash">
         <div>PROMPT PAY</div>
             <svg fill="none" viewBox="0 0 24 24" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke="white" d="M11.6801 14.62L14.2401 12.06L11.6801 9.5"></path>
@@ -39,5 +59,6 @@
                 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke="white" d="M12 4C16.42 4 20 7 20 12C20 17 16.42 20 12 20"></path>
             </svg>
         </button>
+        <form>
     </body>
 </html>
