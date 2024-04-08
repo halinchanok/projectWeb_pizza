@@ -1,6 +1,6 @@
 <?php
     // order_1
-    if(isset($_SESSION['order_1'])){
+    if(isset($_SESSION['order_1']) == true){
         // menu
         echo "<div class='left'> x1 ";
         if(strcmp($_SESSION['order_1']['menu'], "CHEESE PIZZA") == 0){
@@ -51,7 +51,7 @@
 
     echo "<br><br>";
     // order_2
-    if(isset($_SESSION['order_2'])){
+    if(isset($_SESSION['order_2']) == true){
         // menu
         echo "<div class='left'> x1 ";
         if(strcmp($_SESSION['order_2']['menu'], "CHEESE PIZZA") == 0){
