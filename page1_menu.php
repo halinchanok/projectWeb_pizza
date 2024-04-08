@@ -8,6 +8,28 @@
     $_SESSION['crust'] = null;
     $_SESSION['topping'] = null;
     $_SESSION['sum_price'] = 0;
+
+    $_SESSION['order_1'] = array(
+        'menu' => null,
+        'menu_price' => null,
+        'size' => null,
+        'size_price' => null,
+        'crust' => null,
+        'topping' => null,
+        'topping_price' => null,
+        'sum_price' => null
+    );
+
+    $_SESSION['order_2'] = array(
+        'menu' => null,
+        'menu_price' => null,
+        'size' => null,
+        'size_price' => null,
+        'crust' => null,
+        'topping' => null,
+        'topping_price' => null,
+        'sum_price' => null
+    );
 ?>
 
 <!DOCTYPE html>
