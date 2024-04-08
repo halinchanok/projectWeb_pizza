@@ -1,20 +1,18 @@
 <?php
-    $host='localhost';
-    $user='root';
-    $pass=''; 
-    $db='pizzastore'; 
-    $conn= mysqli_connect($host,$user,$pass,$db); //เชื่อมต่อ serrver database
+    require 'connection.php';
+                        $conn->close();
 
     if(isset($_POST["submit"])){
+        $sql = "SELECT * FROM orderpizza";
+        $result = $conn->query($sql);
+        $order_id = ($result->num_rows) + 1;
+
         $menu_id = $_SESSION[order_1]['menu']; 
         $size = $_SESSION['order_1']['size']; 
         $crust_id = $_SESSION['order_1']['crust']; 
         $topping_id = $_SESSION['order_1']['topping']; 
         $summary = $_SESSION['order_1']['sum_price'];
-        
-        if(){
-            
-        }
+
         $query = "INSERT INTO orderpizza VALUES ('', '$menu_id', '$size', '$crust_id', '$topping_id')";
         mysqli_query($conn, $query);
     }
