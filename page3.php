@@ -1,21 +1,35 @@
 <?php
     require 'connection.php';
-                        $conn->close();
 
     if(isset($_POST["submit"])){
         $sql = "SELECT * FROM orderpizza";
         $result = $conn->query($sql);
         $order_id = ($result->num_rows) + 1;
 
-        $menu_id = $_SESSION[order_1]['menu']; 
-        $size = $_SESSION['order_1']['size']; 
-        $crust_id = $_SESSION['order_1']['crust']; 
-        $topping_id = $_SESSION['order_1']['topping']; 
-        $summary = $_SESSION['order_1']['sum_price'];
+        if(isset($_SESSION['order_1']['size']) == true){
+            $menu_id = $_SESSION['order_1']['menu']; 
+            $size = $_SESSION['order_1']['size']; 
+            $crust_id = $_SESSION['order_1']['crust']; 
+            $topping_id = $_SESSION['order_1']['topping']; 
+            $summary = $_SESSION['order_1']['sum_price'];
+            $status = "unpay";
 
-        $query = "INSERT INTO orderpizza VALUES ('', '$menu_id', '$size', '$crust_id', '$topping_id')";
-        mysqli_query($conn, $query);
+            $query = "INSERT INTO orderpizza VALUES ('$order_id', '$menu_id', '$size', '$crust_id', '$topping_id', '$summary', '$status')";
+            mysqli_query($conn, $query);
+        }
+        if(isset($_SESSION['order_2']['size']) == true){
+            $menu_id = $_SESSION['order_2']['menu']; 
+            $size = $_SESSION['order_2']['size']; 
+            $crust_id = $_SESSION['order_2']['crust']; 
+            $topping_id = $_SESSION['order_2']['topping']; 
+            $summary = $_SESSION['order_2']['sum_price'];
+            $status = "unpay";
+
+            $query = "INSERT INTO orderpizza VALUES ('$order_id', '$menu_id', '$size', '$crust_id', '$topping_id', '$summary', '$status')";
+            mysqli_query($conn, $query);
+        }
     }
+    $conn->close();
 ?>
 
 <!DOCTYPE html>
