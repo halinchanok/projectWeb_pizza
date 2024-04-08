@@ -2,39 +2,17 @@
     require 'connection.php';
     require 'lang_page2.php';
     session_start();
-    
-    $_SESSION['menu'] = null;
-    $_SESSION['size'] = null;
-    $_SESSION['crust'] = null;
-    $_SESSION['topping'] = null;
-    $_SESSION['sum_price'] = 0;
 
-    $_SESSION['order_1'] = array(
-        'menu' => "CHEESE PIZZA",
-        'menu_price' => null,
-        'size' => null,
-        'size_price' => null,
-        'crust' => null,
-        'topping' => null,
-        'topping_price' => null,
-        'sum_price' => null
-    );
-    $_SESSION['order_2'] = array(
-        'menu' => null,
-        'menu_price' => null,
-        'size' => null,
-        'size_price' => null,
-        'crust' => null,
-        'topping' => null,
-        'topping_price' => null,
-        'sum_price' => null
-    );
-
+    // รับค่าที่ส่งมาจาก form
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // รับค่าที่ส่งมาจาก form
-
+        $_SESSION['menu'] = 'CHEESE PIZZA';
+        $_SESSION['menu_price'] = 369;
+        $_SESSION['size'] = null;
+        $_SESSION['crust'] = null;
+        $_SESSION['topping'] = null;
         $_SESSION['sum_price'] = 0;
-        // set ชื่อเมนู
+
+        // เซทค่าเริ่มต้น
         if($_POST['order_name'] == "images/cheese pizza.webp"){
             $_SESSION['menu'] = 'CHEESE PIZZA';
         }else if($_POST['order_name'] == "images/Double pepperoni.webp"){
@@ -46,7 +24,6 @@
         }else if($_POST['order_name'] == "images/MEAT DELUXE.webp"){
             $_SESSION['menu'] = 'MEAT DELUXE';
         }else $_SESSION['menu'] = 'SEAFOOD DELUXE';
-        
         $_SESSION['size'] = $_POST['order_size'];
         $_SESSION['crust'] = $_POST['order_crust'];
         $_SESSION['topping'] = $_POST['order_topping'];
@@ -79,9 +56,9 @@
                 }
             }
 
-            if(isset($_SESSION['order_1'])) {
+            if(isset($_SESSION['order_1']['size']) == true) {
                 // ถ้ามี จะเพิ่มเงื่อนไขเพิ่ม session array order_2
-                $_SESSION['order_1'] = array(
+                $_SESSION['order_2'] = array(
                     'menu' => $_SESSION['menu'],
                     'menu_price' => $_SESSION['menu_price'],
                     'size' => $_SESSION['size'],
@@ -93,7 +70,7 @@
                 );
             } else {
                 // ถ้ายังไม่มี จะเพิ่ม session array order_1
-                $_SESSION['order_2'] = array(
+                $_SESSION['order_1'] = array(
                     'menu' => $_SESSION['menu'],
                     'menu_price' => $_SESSION['menu_price'],
                     'size' => $_SESSION['size'],
@@ -106,10 +83,11 @@
             }
     }
     
-    echo "<br>order1";
-    print_r($_SESSION['order_1']);
-    echo "<br>order2";
-    print_r($_SESSION['order_2']);
+    // echo "<br>order1";
+    // print_r($_SESSION['order_1']);
+    // echo "<br>order2";
+    // print_r($_SESSION['order_2']);
+    // echo "<br><br>";
 ?>
 
 
@@ -252,11 +230,11 @@
                     <div class='left'>-----------------------------------------------------</div><br>
                     <br><br><br>
                     <?php
-                        if(($_SESSION['order_1'] == true) && ($_SESSION['order_2'] == true)){
+                        if(($_SESSION['order_1']['size'] == true) && ($_SESSION['order_2']['size'] == true)){
                             echo "<div class='right'>2 ". $lang_pieces ."</div><br>";
                             echo "<div class='right'>".$lang_total."</div>";
                             echo "<div class='right'>฿". $_SESSION['sum_price'] .".00</div>";
-                        }else if(($_SESSION['order_1'] == true) && ($_SESSION['order_2'] == false)){
+                        }else if(($_SESSION['order_1']['size'] == true) && ($_SESSION['order_2']['size'] == false)){
                             echo "<div class='right'>1 ". $lang_pieces ."</div><br>";
                             echo "<div class='right'>".$lang_total."</div>";
                             echo "<div class='right'>฿". $_SESSION['sum_price'] .".00</div>";

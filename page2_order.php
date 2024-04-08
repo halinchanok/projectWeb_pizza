@@ -1,6 +1,6 @@
 <?php
     // order_1
-    if(isset($_SESSION['order_1']) == true){
+    if(isset($_SESSION['order_1']['size']) == true){
         // menu
         echo "<div class='left'> x1 ";
         if(strcmp($_SESSION['order_1']['menu'], "CHEESE PIZZA") == 0){
@@ -42,16 +42,16 @@
             echo $lang_cheese;
         }else echo $lang_sau;
         echo "</div>";
+        // price
+        echo "<div class='right'><br>" . $_SESSION['order_1']['sum_price'] . ".00 <br></div> ";
     }else {
         echo "<div class='left1'>". $lang_sorry ."</div>";
     }
-    // price
-    echo "<div class='right'><br>" . $_SESSION['order_1']['sum_price'] . ".00 <br></div> ";
-
+    
 
     echo "<br><br>";
     // order_2
-    if(isset($_SESSION['order_2']) == true){
+    if(isset($_SESSION['order_2']['size']) == true){
         // menu
         echo "<div class='left'> x1 ";
         if(strcmp($_SESSION['order_2']['menu'], "CHEESE PIZZA") == 0){
