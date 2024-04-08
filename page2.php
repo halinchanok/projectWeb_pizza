@@ -248,19 +248,23 @@
                     <!-- พิมพ์รายการ order -->
                     <?php require 'page2_order.php'; ?>
                     <br><br><br>
-                <?php
-                    if(isset($_SESSION['menu']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
-                        echo "<div class='right'>1 ". $lang_pieces ."</div><br>";
-                        echo "<div class='right'>".$lang_total."</div>";
-                        echo "<div class='right'>฿". ($_SESSION['order_1']['sum_price'] + $_SESSION['order_2']['sum_price']) .".00</div>";
-                    }else{
-                        echo "<div class='right'>0 ". $lang_pieces ."</div><br>";
-                        echo "<div class='right'>".$lang_total."</div>";
-                        echo "<div class='right'>฿0.00</div>";
-
-                    }
-                ?>
+                    <?php
+                        if(isset($_SESSION['order_1']) && isset($_SESSION['order_2'])){
+                            echo "<div class='right'>2 ". $lang_pieces ."</div><br>";
+                            echo "<div class='right'>".$lang_total."</div>";
+                            echo "<div class='right'>฿". ($_SESSION['order_1']['sum_price'] + $_SESSION['order_2']['sum_price']) .".00</div>";
+                        }else if(isset($_SESSION['order_1']) && isset($_SESSION['order_2']) == false){
+                            echo "<div class='right'>1 ". $lang_pieces ."</div><br>";
+                            echo "<div class='right'>".$lang_total."</div>";
+                            echo "<div class='right'>฿". ($_SESSION['order_1']['sum_price'] + $_SESSION['order_2']['sum_price']) .".00</div>";
+                        }else{
+                            echo "<div class='right'>0 ". $lang_pieces ."</div><br>";
+                            echo "<div class='right'>".$lang_total."</div>";
+                            echo "<div class='right'>฿0.00</div>";
+                        }
+                    ?>
                 <br><br>
+                <!-- ปุ่มไปหน้าจ่ายตัง -->
                 <button type="button" class="button" id="top3">
                 <script>
                     document.getElementById('top3').addEventListener('click', function() {
@@ -274,10 +278,7 @@
                     </svg>
                         <?php echo  $lang_pay; ?>
                 </button>
-                
-
             </div>
-            
         </div>
     </body>
 </html>

@@ -46,7 +46,7 @@
         echo "<div class='left1'>". $lang_sorry ."</div>";
     }
     // price
-    echo "<div class='right'>" . $_SESSION['order_1']['sum_price'] . ".00</div>";
+    echo "<div class='right'><br>" . $_SESSION['order_1']['sum_price'] . ".00 <br></div> ";
 
 
     echo "<br><br>";
@@ -95,7 +95,7 @@
         echo "</div>";
 
         // price
-        echo "<div class='right'>" . $_SESSION['order_2']['sum_price'] . ".00";
+        echo "<div class='right'><br>" . $_SESSION['order_2']['sum_price'] . ".00 </div>";
 
     }
 ?>
