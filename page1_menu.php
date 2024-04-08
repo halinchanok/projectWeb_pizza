@@ -1,15 +1,13 @@
 <?php
-    require 'lang_page1.php';
+    require 'connection.php';
+    require 'lang_page2.php';
 
     session_start();
-    $_SESSION['menu1'] = null;
+    $_SESSION['menu'] = null;
     $_SESSION['size'] = null;
     $_SESSION['crust'] = null;
     $_SESSION['topping'] = null;
     $_SESSION['sum_price'] = 0;
-
-    $_SESSION['menu1'] = 'AA';
-
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +26,22 @@
         <a href="page1_menu.php?lang=en">en</a>
         <a href="page1_menu.php?lang=th">th</a>
 
+
         <!-- เลือกหน้าพิซซ่า -->
         <div class="container">
             <img class="best" src="images/bestsell.png">
             <img class="best2" src="images/bestsell.png">
+
+            <!-- <form class="menu"  method="post" action='page2.php'>
+                <img src="images/cheese pizza.webp">
+                <div class="cs"><?php echo $lang_cheese; ?></div>
+                <button class="BT1" id="btn1" type='submit' value='cheese'> ข้อความ </button>    
+            </form>
+            <script>
+                document.getElementById('btn1').addEventListener('click', function() {
+                  window.location.href = 'page2.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                });
+            </script> -->
 
             <div class="menu1"  method="post">
                 <img src="images/cheese pizza.webp">

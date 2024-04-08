@@ -1,5 +1,6 @@
 // page1
 
+
 // page2 -----------------------------------------------------------------------------
 function changeImage() {
     const selectElement = document.getElementById("order_name");

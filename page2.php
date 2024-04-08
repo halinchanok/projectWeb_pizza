@@ -3,7 +3,8 @@
     require 'lang_page2.php';
     session_start();
 
-    $_SESSION['menu2'] = $_SESSION['menu1'];
+    $_SESSION['menu2'] = $_SESSION['menu'];
+    echo $_SESSION['menu'];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // รับค่าที่ส่งมาจาก form
@@ -54,6 +55,12 @@
         }
     }
     
+    if(isset($_SESSION['menu'])) {
+        $selected_option = $_SESSION['menu'];
+    } else {
+        $selected_option = ''; // ตั้งค่าเริ่มต้นหากยังไม่มีค่าที่เซฟ
+    }
+    
 ?>
 
 
@@ -82,8 +89,15 @@
         <!--div class="containerP2"-->
             <form class="PZ" action="" method="post" autocomplete="off">
                 <!-- เลือกหน้าพิซซ่า -->
-            
                 <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
+                    <option value="images/Double pepperoni.webp" <?php if($selected_option == 'images/Double pepperoni.webp') echo 'selected'; ?>><?php echo $lang_pepperoni; ?></option>
+                    <option value="images/cheese pizza.webp" <?php if($selected_option == 'images/cheese pizza.webp') echo 'selected'; ?>><?php echo $lang_cheese; ?></option>
+                    <option value="images/HAM&C.webp" <?php if($selected_option == 'images/HAM&C.webp') echo 'selected'; ?>><?php echo $lang_ham; ?></option>
+                    <option value="images/TOM YUM KUNG.webp" <?php if($selected_option == 'images/TOM YUM KUNG.webp') echo 'selected'; ?>><?php echo $lang_tomyum; ?></option>
+                    <option value="images/MEAT DELUXE.webp" <?php if($selected_option == 'images/MEAT DELUXE.webp') echo 'selected'; ?>><?php echo $lang_deluxe; ?></option>
+                    <option value="images/SEAFOOD DELUXE.webp" <?php if($selected_option == 'images/SEAFOOD DELUXE.webp') echo 'selected'; ?>><?php echo $lang_seafood; ?></option>
+                </select>
+                <!-- <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
                 <div class="container21">
                   <div class="C">
                     <option class="img" value="images/Double pepperoni.webp"><?php echo $lang_pepperoni; ?></option>
@@ -94,8 +108,9 @@
                     <option class="img" value="images/SEAFOOD DELUXE.webp"><?php echo $lang_seafood; ?></option>
                  </div>
                 </div>
-                </select>
+                </select> -->
             
+                
                 <br><br> 
                     <img class="img" id="img_order_name" src="images/Double pepperoni.webp" alt="Selected Image">
                 <br><br>
@@ -242,6 +257,7 @@
                         }if($_SESSION['crust'] == 'CHEESE CRUST'){
                             echo $lang_cheese;
                         }else echo $lang_sau;
+
                     } 
                     else {
                         echo "<div class='left1'>". $lang_sorry ."</div>";
@@ -259,6 +275,7 @@
                         echo "<div class='right'>0 ". $lang_pieces ."</div><br>";
                         echo "<div class='right'>".$lang_total."</div>";
                         echo "<div class='right'>฿0.00</div>";
+
                     }
                 ?>
                 <br><br>
