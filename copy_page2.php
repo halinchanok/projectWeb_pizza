@@ -3,110 +3,64 @@
     require 'lang_page2.php';
     session_start();
 
+    $_SESSION['menu2'] = $_SESSION['menu'];
+    echo $_SESSION['menu'];
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // รับค่าที่ส่งมาจาก form
 
         $_SESSION['sum_price'] = 0;
         // set ชื่อเมนู
         if($_POST['order_name'] == "images/cheese pizza.webp"){
-            $_SESSION['menu'] = 'CHEESE PIZZA';
+            $_SESSION['menu2'] = 'CHEESE PIZZA';
         }else if($_POST['order_name'] == "images/Double pepperoni.webp"){
-            $_SESSION['menu'] = 'DOUBLE PEPPERONI';
+            $_SESSION['menu2'] = 'Double Pepperoni';
         }else if($_POST['order_name'] == "images/HAM&C.webp"){
-            $_SESSION['menu'] = 'HAM&CRAB STICKS';
+            $_SESSION['menu2'] = 'HAM&CRAB STICKS';
         }else if($_POST['order_name'] == "images/TOM YUM KUNG.webp"){
-            $_SESSION['menu'] = 'TOM YUM KUNG';
+            $_SESSION['menu2'] = 'TOM YUM KUNG';
         }else if($_POST['order_name'] == "images/MEAT DELUXE.webp"){
-            $_SESSION['menu'] = 'MEAT DELUXE';
-        }else $_SESSION['menu'] = 'SEAFOOD DELUXE';
+            $_SESSION['menu2'] = 'MEAT DELUXE';
+        }else $_SESSION['menu2'] = 'SEAFOOD DELUXE';
         
         $_SESSION['size'] = $_POST['order_size'];
         $_SESSION['crust'] = $_POST['order_crust'];
         $_SESSION['topping'] = $_POST['order_topping'];
-        // set ราคาเมนู
-        $sql = "SELECT * FROM menu";
-        $result = $conn->query($sql);
-        while ($row=$result->fetch_assoc()) {
-            if($row['menu_name'] == $_SESSION['menu']){
-                $_SESSION['menu_price'] = $row['menu_price'];
-                $_SESSION['sum_price'] += $_SESSION['menu_price'];
-            }
-        }
-        // set ราคาขนาด
-        $sql = "SELECT * FROM size";
-        $result = $conn->query($sql);
-        while ($row=$result->fetch_assoc()) {
-            if($row['size'] == $_SESSION['size']){
-                $_SESSION['size_price'] = $row['size_price'];
-                $_SESSION['sum_price'] += $row['size_price'];
-            }
-        }
-        // set ราคาท็อปปิ้ง
-        $sql = "SELECT * FROM topping";
-        $result = $conn->query($sql);
-        while ($row=$result->fetch_assoc()) {
-            if($row['topping_name'] == $_SESSION['topping']){
-                $_SESSION['topping_price'] = $row['topping_price'];
-                $_SESSION['sum_price'] += $row['topping_price'];
-            }
-        }
-
-        // เอาข้อมูลเข้า array session
-        if($_SESSION['order_1']['menu'] == null) {
-            // ถ้ามี จะเพิ่มเงื่อนไขเพิ่ม session array order_2
-            $_SESSION['order_1'] = array(
-                'menu' => $_SESSION['menu'],
-                'menu_price' => $_SESSION['menu_price'],
-                'size' => $_SESSION['size'],
-                'size_price' => $_SESSION['size_price'],
-                'crust' => $_SESSION['crust'],
-                'topping' => $_SESSION['topping'],
-                'topping_price' => $_SESSION['topping_price'],
-                'sum_price' => $_SESSION['sum_price']
-            );
-        } else {
-            $_SESSION['order_2'] = array(
-                'menu' => $_SESSION['menu'],
-                'menu_price' => $_SESSION['menu_price'],
-                'size' => $_SESSION['size'],
-                'size_price' => $_SESSION['size_price'],
-                'crust' => $_SESSION['crust'],
-                'topping' => $_SESSION['topping'],
-                'topping_price' => $_SESSION['topping_price'],
-                'sum_price' => $_SESSION['sum_price']
-            );
-        } 
-        if(isset($_SESSION['order_1'])){
-            echo "มีข้อมูล <br>";
-        }else echo "ไม่มีข้อมูล <br>";
-        
     }
- 
-    // กดแล้วจะล้างค่าอที่อยู่ใน session
-    if (isset($_POST["reset"])) {
-        $_SESSION['order_1'] = array(
-            'menu' => null,
-            'size' => null,
-            'crust' => null,
-            'topping' => null,
-            'sum_price' => null
-        );
-        $_SESSION['order_2'] = array(
-            'menu' => null,
-            'size' => null,
-            'crust' => null,
-            'topping' => null,
-            'sum_price' => null
-        );
+    // set ราคาเมนู
+    $sql = "SELECT * FROM menu";
+    $result = $conn->query($sql);
+    while ($row=$result->fetch_assoc()) {
+        if($row['menu_name'] == $_SESSION['menu2']){
+            $_SESSION['menu_price'] = $row['menu_price'];
+            $_SESSION['sum_price'] += $_SESSION['menu_price'];
+        }
     }
-
-    // ทดสอบว่าข้อมูลเข้ามั้ย
-    echo "order1 <br>";
-    print_r($_SESSION['order_1']);
-    echo "<br>";
-    echo "order2 <br>";
-    print_r($_SESSION['order_2']);
-    echo "<br><br>";
+    // set ราคาขอบ
+    $sql = "SELECT * FROM size";
+    $result = $conn->query($sql);
+    while ($row=$result->fetch_assoc()) {
+        if($row['size'] == $_SESSION['size']){
+            $_SESSION['size_price'] = $row['size_price'];
+            $_SESSION['sum_price'] += $row['size_price'];
+        }
+    }
+    // set ราคาท็อปปิ้ง
+    $sql = "SELECT * FROM topping";
+    $result = $conn->query($sql);
+    while ($row=$result->fetch_assoc()) {
+        if($row['topping_name'] == $_SESSION['topping']){
+            $_SESSION['topping_price'] = $row['topping_price'];
+            $_SESSION['sum_price'] += $row['topping_price'];
+        }
+    }
+    
+    if(isset($_SESSION['menu'])) {
+        $selected_option = $_SESSION['menu'];
+    } else {
+        $selected_option = ''; // ตั้งค่าเริ่มต้นหากยังไม่มีค่าที่เซฟ
+    }
+    
 ?>
 
 
@@ -136,6 +90,14 @@
             <form class="PZ" action="" method="post" autocomplete="off">
                 <!-- เลือกหน้าพิซซ่า -->
                 <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
+                    <option value="images/Double pepperoni.webp" <?php if($selected_option == 'images/Double pepperoni.webp') echo 'selected'; ?>><?php echo $lang_pepperoni; ?></option>
+                    <option value="images/cheese pizza.webp" <?php if($selected_option == 'images/cheese pizza.webp') echo 'selected'; ?>><?php echo $lang_cheese; ?></option>
+                    <option value="images/HAM&C.webp" <?php if($selected_option == 'images/HAM&C.webp') echo 'selected'; ?>><?php echo $lang_ham; ?></option>
+                    <option value="images/TOM YUM KUNG.webp" <?php if($selected_option == 'images/TOM YUM KUNG.webp') echo 'selected'; ?>><?php echo $lang_tomyum; ?></option>
+                    <option value="images/MEAT DELUXE.webp" <?php if($selected_option == 'images/MEAT DELUXE.webp') echo 'selected'; ?>><?php echo $lang_deluxe; ?></option>
+                    <option value="images/SEAFOOD DELUXE.webp" <?php if($selected_option == 'images/SEAFOOD DELUXE.webp') echo 'selected'; ?>><?php echo $lang_seafood; ?></option>
+                </select>
+                <!-- <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
                 <div class="container21">
                   <div class="C">
                     <option class="img" value="images/Double pepperoni.webp"><?php echo $lang_pepperoni; ?></option>
@@ -146,7 +108,9 @@
                     <option class="img" value="images/SEAFOOD DELUXE.webp"><?php echo $lang_seafood; ?></option>
                  </div>
                 </div>
-                </select> 
+                </select> -->
+            
+                
                 <br><br> 
                     <img class="img" id="img_order_name" src="images/Double pepperoni.webp" alt="Selected Image">
                 <br><br>
@@ -245,14 +209,68 @@
                     <div class="center"><?php echo $lang_item; ?></div>
                     <div class='left'>-----------------------------------------------------</div><br>
                 </div>
-                    <!-- พิมพ์รายการ order -->
-                    <?php require 'page2_order.php'; ?>
-                    <br><br><br>
+                    <?php
+                    // ตรวจสอบว่ามีข้อมูลใน session หรือไม่
+                    if(isset($_SESSION['menu2']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
+                        // แสดงผลข้อมูลที่เก็บใน session
+                        echo "<div class='left'> x1 ";
+                        if($_SESSION['menu2'] == "CHEESE PIZZA"){
+                            echo $lang_cheese;
+                        }else if($_SESSION['menu2'] == "DOUBLE PEPPERONI"){
+                            echo $lang_pepperoni;
+                        }else if($_SESSION['menu2'] == "HAM&CRAB STICKS"){
+                            echo $lang_ham;
+                        }else if($_SESSION['menu2'] == "MEAT DELUXE"){
+                            echo $lang_deluxe;
+                        }else if($_SESSION['menu2'] == "TOM YUM KUNG"){
+                            echo $lang_tomyum;
+                        }else echo $lang_seafood;
+                        
+                        echo "</div>"; 
+                        echo "<div class='right'>";
+                        echo $_SESSION['menu_price'];
+                        echo ".00</div>";
+
+                        echo "<div class='left1'>";
+                        echo $lang_size ." ". $_SESSION['size'];
+                        echo "</div>"; 
+                        echo "<div class='right'>";
+                        echo $_SESSION['size_price'];
+                        echo ".00</div>"; 
+
+                        echo "<div class='left1'>";
+                        if($_SESSION['topping'] == 'cheese'){
+                            echo $lang_cheese2;
+                        }if($_SESSION['topping'] == 'ham'){
+                            echo $lang_ham;
+                        }else echo $lang_pepperoni;
+                        echo "</div>"; 
+                        echo "<div class='right'>";
+                        echo $_SESSION['topping_price'];
+                        echo ".00</div>";
+
+                        echo "<div class='left1'>";
+                        if($_SESSION['crust'] == 'PAN CRUST'){
+                            echo $lang_pan;
+                        }if($_SESSION['crust'] == 'CRISPY THIN'){
+                            echo $lang_crispy;
+                        }if($_SESSION['crust'] == 'CHEESE CRUST'){
+                            echo $lang_cheese;
+                        }else echo $lang_sau;
+
+                    } 
+                    else {
+                        echo "<div class='left1'>". $lang_sorry ."</div>";
+                    }
+                    ?>
+                <br><br><br>
+
+
                 <?php
-                    if(isset($_SESSION['menu']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
+                    if(isset($_SESSION['menu2']) && isset($_SESSION['size']) && isset($_SESSION['crust']) && isset($_SESSION['topping'])) {
                         echo "<div class='right'>1 ". $lang_pieces ."</div><br>";
                         echo "<div class='right'>".$lang_total."</div>";
-                        echo "<div class='right'>฿". ($_SESSION['order_1']['sum_price'] + $_SESSION['order_2']['sum_price']) .".00</div>";
+                        echo "<div class='right'>฿". $_SESSION['sum_price'] .".00</div>";
                     }else{
                         echo "<div class='right'>0 ". $lang_pieces ."</div><br>";
                         echo "<div class='right'>".$lang_total."</div>";
