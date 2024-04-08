@@ -50,7 +50,7 @@
             </div>
             <script>
                 document.getElementById('btn1').addEventListener('click', function() {
-                  window.location.href = 'page2.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                  window.location.href = 'page2C.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
                 });
             </script>
                 
@@ -61,7 +61,7 @@
             </div>
             <script>
                 document.getElementById('btn2').addEventListener('click', function() {
-                  window.location.href = 'page2.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                  window.location.href = 'page2P.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
                 });
             </script>
 
@@ -72,7 +72,7 @@
             </div>
             <script>
                 document.getElementById('btn3').addEventListener('click', function() {
-                  window.location.href = 'page2.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                  window.location.href = 'page2H.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
                 });
             </script>
         </div>
@@ -88,7 +88,7 @@
             </div>
             <script>
                 document.getElementById('btn4').addEventListener('click', function() {
-                  window.location.href = 'page2.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                  window.location.href = 'page2M.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
                 });
             </script>
             <div class="menu">
@@ -98,7 +98,7 @@
             </div>
             <script>
                 document.getElementById('btn5').addEventListener('click', function() {
-                  window.location.href = 'page2.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                  window.location.href = 'page2T.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
                 });
             </script>
 
@@ -109,7 +109,7 @@
             </div>
             <script>
                 document.getElementById('btn6').addEventListener('click', function() {
-                  window.location.href = 'page2.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
+                  window.location.href = 'page2S.php'; // เปลี่ยนเส้นทางไปยังหน้าที่สอง
                 });
             </script>
         </div>
