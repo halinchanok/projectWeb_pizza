@@ -6,11 +6,15 @@
     $conn= mysqli_connect($host,$user,$pass,$db); //เชื่อมต่อ serrver database
 
     if(isset($_POST["submit"])){
-        $menu_id = 'M01'; 
-        $size = 'S'; 
-        $crust_id = 'C01'; 
-        $topping_id = 'T01'; 
+        $menu_id = $_SESSION[order_1]['menu']; 
+        $size = $_SESSION['order_1']['size']; 
+        $crust_id = $_SESSION['order_1']['crust']; 
+        $topping_id = $_SESSION['order_1']['topping']; 
+        $summary = $_SESSION['order_1']['sum_price'];
         
+        if(){
+            
+        }
         $query = "INSERT INTO orderpizza VALUES ('', '$menu_id', '$size', '$crust_id', '$topping_id')";
         mysqli_query($conn, $query);
     }

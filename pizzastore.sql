@@ -50,6 +50,8 @@ create table orderPizza(
     amount int not null,
     crust_id varchar(3) not null,
     topping_id varchar(3) not null,
+    summary int not null,
+    status_order varchar(20),
     foreign key (menu_id) references menu(menu_id),
     foreign key (size) references size(size),
     foreign key (crust_id) references crust(crust_id),
