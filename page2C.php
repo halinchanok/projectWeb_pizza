@@ -82,7 +82,6 @@
                 );
             }
     }
-    
     // echo "<br>order1";
     // print_r($_SESSION['order_1']);
     // echo "<br>order2";
