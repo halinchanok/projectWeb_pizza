@@ -114,12 +114,12 @@
                             // ออมสินตกแต่งตรงนี้ได้
                             echo "<div class='bar'>";
                             echo "<tr>
-                                    <td>".$row['order_id'] ."</td>
-                                    <td>".$menu."</td>
-                                    <td>".$row['size']."</td>
-                                    <td>".$crust."</td>
-                                    <td>".$topping."</td>
-                                    <td>".$row['summary']."</td>
+                                    <td><div class='id'>".$row['order_id'] ."</div></td>
+                                    <td><div class='menu'>".$menu."</div></td>
+                                    <td><div class='id'>".$row['size']."</div></td>
+                                    <td><div class='id'>".$crust."</div></td>
+                                    <td><div class='id'>".$topping."</div></td>
+                                    <td><div class='id'>".$row['summary']."</div></td>
                                 </tr></div>";
                             // echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
                             $sum++;
