@@ -69,7 +69,7 @@
 
             <div class="menu1"  method="post">
                 <img src="images/cheese pizza.webp">
-                <div class="cs"><?php echo $lang['CHEESE PIZZA']; ?></div>
+                <div class="cs"><?php echo $lang['DOUBLE CHEESE']; ?></div>
                 <button class="BT1" id="btn1"> ข้อความ </button>    
             </div>
             <script>

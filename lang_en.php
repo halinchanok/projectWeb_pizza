@@ -1,6 +1,6 @@
 <?php
     $lang = array(
-        "CHEESE PIZZA" => "CHEESE PIZZA",
+        "DOUBLE CHEESE" => "DOUBLE CHEESE",
         "DOUBLE PEPPERONI" => "DOUBLE PEPPERONI",
         "HAM&CRAB STICKS" => "HAM&CRAB STICKS",
         "MEAT DELUXE" => "MEAT DELUXE",

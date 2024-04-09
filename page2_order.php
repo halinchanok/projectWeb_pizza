@@ -10,8 +10,8 @@
     if(isset($_SESSION['order_1']['size']) == true){
         // menu
         echo "<div class='left'> x1 ";
-        if(strcmp($_SESSION['order_1']['menu'], "CHEESE PIZZA") == 0){
-            echo $lang["CHEESE PIZZA"];
+        if(strcmp($_SESSION['order_1']['menu'], "DOUBLE CHEESE") == 0){
+            echo $lang["DOUBLE CHEESE"];
         }else if($_SESSION['order_1']['menu'] == "DOUBLE PEPPERONI"){
             echo $lang["DOUBLE PEPPERONI"];
         }else if($_SESSION['order_1']['menu'] == "HAM&CRAB STICKS"){
@@ -61,8 +61,8 @@
     if(isset($_SESSION['order_2']['size']) == true){
         // menu
         echo "<div class='left'> x1 ";
-        if(strcmp($_SESSION['order_2']['menu'], "CHEESE PIZZA") == 0){
-            echo $lang["CHEESE PIZZA"];
+        if(strcmp($_SESSION['order_2']['menu'], "DOUBLE CHEESE") == 0){
+            echo $lang["DOUBLE CHEESE"];
         }else if($_SESSION['order_2']['menu'] == "DOUBLE PEPPERONI"){
             echo $lang["DOUBLE PEPPERONI"];
         }else if($_SESSION['order_2']['menu'] == "HAM&CRAB STICKS"){

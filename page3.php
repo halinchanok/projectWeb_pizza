@@ -21,7 +21,7 @@
         $order_id = ($result->num_rows) + 1;
         $order_item = 1;
         $order_price = $_SESSION['order_1']['sum_price'];
-        echo $order_id;
+
         // เอาข้อมูลเข้าตาราง orders
         $query = "INSERT INTO orders VALUES ('$order_id', '$order_item', '$order_price')";
         mysqli_query($conn, $query);

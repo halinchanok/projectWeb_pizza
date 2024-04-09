@@ -17,8 +17,8 @@
 
     // รับค่าที่ส่งมาจาก form
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $_SESSION['menu'] = 'CHEESE PIZZA';
-        $_SESSION['menu_price'] = 369;
+        $_SESSION['menu'] = 'DOUBLE CHEESE';
+        $_SESSION['menu_price'] = 299;
         $_SESSION['size'] = null;
         $_SESSION['crust'] = null;
         $_SESSION['topping'] = null;
@@ -26,7 +26,7 @@
 
         // เซทค่าเริ่มต้น
         if($_POST['order_name'] == "images/cheese pizza.webp"){
-            $_SESSION['menu'] = 'CHEESE PIZZA';
+            $_SESSION['menu'] = 'DOUBLE CHEESE';
         }else if($_POST['order_name'] == "images/Double pepperoni.webp"){
             $_SESSION['menu'] = 'DOUBLE PEPPERONI';
         }else if($_POST['order_name'] == "images/HAM&C.webp"){
@@ -128,8 +128,8 @@
                 <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
                 <div class="container21">
                   <div class="C">
+                    <option class="img" value="images/cheese pizza.webp"><?php echo $lang['DOUBLE CHEESE']; ?></option>
                     <option class="img" value="images/Double pepperoni.webp"><?php echo $lang['DOUBLE PEPPERONI']; ?></option>
-                    <option class="img" value="images/cheese pizza.webp"><?php echo $lang['CHEESE PIZZA']; ?></option>
                     <option class="img" value="images/HAM&C.webp"><?php echo $lang['HAM&CRAB STICKS']; ?></option>
                     <option class="img" value="images/TOM YUM KUNG.webp"><?php echo $lang['TOM YUM KUNG']; ?></option>
                     <option class="img" value="images/MEAT DELUXE.webp"><?php echo $lang['MEAT DELUXE']; ?></option>
@@ -152,7 +152,7 @@
                         if ($row['size_stock'] > 0) {
                             echo "<input class='s1' type='radio' class='size-s' id='size-S' name='order_size' value='S' required>";
                             echo "<label class='s' for='size-s'>S</label>";
-                            echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
+                            // echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
                         }
                         echo "<br><br>";
                         $select_M = "SELECT size_stock FROM size WHERE size = 'M'";
@@ -161,7 +161,7 @@
                         if ($row['size_stock'] > 0) {
                             echo "<input class='m1' type='radio' id='size-M' name='order_size' value='M' required>";
                             echo "<label class='m' for='size-m'>M</label>";
-                            echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
+                            // echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
                         }
                         echo "<br><br>";
                         $select_L = "SELECT size_stock FROM size WHERE size = 'L'";
@@ -170,7 +170,7 @@
                         if ($row['size_stock'] > 0) {
                             echo "<input class='l1' type='radio' id='size-L' name='order_size' value='L' required>";
                             echo "<label class='l' for='size-L'>L</label>";
-                            echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
+                            // echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
                         }
                     ?>
                 </div>
@@ -203,22 +203,22 @@
                         echo    "<span class='radio-icon' >";
                         echo    "<img class='PEP' src='images/PEPPERONII.webp' >";
                         echo    "</span><span class='radio-label'>".$lang['PEPPERONI']."</span></span></label>";
-                        echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
+                        // echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
                     }
                     $select2 = "SELECT topping_stock FROM topping WHERE topping_id = 'T02'";
                     $res = $conn->query($select2); // ดึงข้อมูลจากฐานข้อมูล
                     $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
                     if ($row['topping_stock'] > 0) {
                         echo    "<label>";
-                        echo    "<input checked='' class='radio-input' type='radio' name='order_topping' value='ham'>";
+                        echo    "<input class='radio-input' type='radio' name='order_topping' value='ham' >";
                         echo    "<span class='radio-tile' >";
                         echo    "<span class='radio-icon' >";
                         echo    "<img class='HAM' src='images/HAM.webp'>";
                         echo    "</span><span class='radio-label'>".$lang['HAM']."</span></span></label>";
-                        echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
+                        // echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
                     }
-                    $select3 = "SELECT topping_stock FROM topping WHERE topping_id = 'T03'";
-                    $res = $conn->query($select3); // ดึงข้อมูลจากฐานข้อมูล
+                    $select = "SELECT topping_stock FROM topping WHERE topping_id = 'T03'";
+                    $res = $conn->query($select); // ดึงข้อมูลจากฐานข้อมูล
                     $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
                     if ($row['topping_stock'] > 0) {
                         echo    "<label>";
@@ -227,7 +227,7 @@
                         echo    "<span class='radio-icon' >";
                         echo    "<img class='HAM' src='images/CHEESE.webp'>";
                         echo    "</span><span class='radio-label'>".$lang['CHEESE']."</span></span></label>";
-                        echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
+                        // echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
                     }
                 ?>
                 </div>

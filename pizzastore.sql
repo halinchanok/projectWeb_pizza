@@ -51,7 +51,6 @@ create table orderPizza(
 	order_id int,
     menu_id varchar(3) not null,
     size varchar(1) not null,
-    amount int not null,
     crust_id varchar(3) not null,
     topping_id varchar(3) not null,
     summary int not null,

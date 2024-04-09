@@ -48,10 +48,10 @@ body {
     width: 80%;
     height: 40px;
     background-color: white;
-    
     margin-left: 10%;
     border-radius: 10px;
     position: absolute;
+
 }
 
 .Order {
@@ -130,4 +130,14 @@ body {
     font-size: 25px;
     color: rgb(0, 0, 0);
     font-weight: bolder;
+}
+
+.bar1 {
+    width: 80%;
+    height: 40px;
+    background-color: white;
+    line-height: 100;
+    margin-left: 10%;
+    border-radius: 10px;
+    position: absolute;
 }

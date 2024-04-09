@@ -94,10 +94,9 @@
                             }else $topping = "pepperoni";
 
                             // ออมสินตกแต่งตรงนี้ได้
-                            echo "<div>".$row['order_id']." ".$menu." ".$row['size']." ".$crust." ".$topping." ".$row['summary'] ." <div>". $row['status_order']."</div></div>";
-                            
-                            echo "-------------------------------------------------------------------------------------";
+                            echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
                             $sum++;
+                            echo "<br><br><br>";
                         }
                         echo "</div>";
                     }else{
