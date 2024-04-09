@@ -114,8 +114,12 @@
         <script src="script.js"></script><!-- JS -->
         
         <!-- ปุ่มเปลี่ยนภาษา -->
-        <a href="?lang=en">en</a>
-        <a href="?lang=th">th</a>
+        <div class="conflag"> 
+            <a href="?lang=th"><img class="flag" src="images/Flag-Thailand.webp" alt="Thai Flag"></a>
+        </div>
+        <div class="conflag"> 
+            <a href="?lang=en"><img class="flagen" src="images/eng.png" alt="English Flag"></a>
+        </div>
 
         <a href="page1_menu.php" target="_self">
             <button class="BACK">back</button>
