@@ -4,8 +4,8 @@ create table menu(
     menu_price int,
     menu_stock int
 );
-insert into menu(menu_id, menu_name, menu_price, menu_stock) value('M01', 'Double Pepperoni', 299, 100);
-insert into menu(menu_id, menu_name, menu_price, menu_stock) value('M02', 'Double Cheese', 299, 100);
+insert into menu(menu_id, menu_name, menu_price, menu_stock) value('M01', 'DOUBLE PEPPERONI', 299, 100);
+insert into menu(menu_id, menu_name, menu_price, menu_stock) value('M02', 'DOUBLE CHEESE', 299, 100);
 insert into menu(menu_id, menu_name, menu_price, menu_stock) value('M03', 'HAM&CRAB STICKS', 369, 100);
 insert into menu(menu_id, menu_name, menu_price, menu_stock) value('M04', 'TOM YUM KUNG', 369, 100);
 insert into menu(menu_id, menu_name, menu_price, menu_stock) value('M05', 'MEAT DELUXE', 399, 100);
