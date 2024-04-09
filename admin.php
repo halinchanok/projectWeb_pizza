@@ -2,16 +2,20 @@
     require 'connection.php';
     session_start();
 
-    $_SESSION['stock_cheese'] = 'in';
-    $_SESSION['stock_pep'] = 'in';
-    $_SESSION['stock_ham'] = 'in';
-
-    // เปลี่ยนค่า session เมื่อมีการเลือก option ใหม่
-    if(isset($_POST['selected_option'])) {
-        $_SESSION['stock_cheese'] = $_POST['selected_option'];
-        $_SESSION['stock_pep'] = $_POST['selected_option'];
-        $_SESSION['stock_ham'] = $_POST['selected_option'];
-    }
+    // if($_SERVER["REQUEST_METHOD"] == "POST"){
+    //     if(isset($_POST['stock_pep'])){
+    //         $_SESSION['stock_pep'] = $_POST['stock_pep']; // เก็บค่าที่เลือกใน session
+    //     }
+    //     if(isset($_POST['stock_ham'])){
+    //         $_SESSION['stock_ham'] = $_POST['stock_ham']; // เก็บค่าที่เลือกใน session
+    //     }
+    //     if(isset($_POST['stock_cheese'])){
+    //         $_SESSION['stock_cheese'] = $_POST['stock_cheese']; // เก็บค่าที่เลือกใน session
+    //     }
+    // }
+    echo $_SESSION['stock_pep'];
+    echo $_SESSION['stock_ham'];
+    echo $_SESSION['stock_cheese'];
 
     $sql = "SELECT * FROM orderpizza";
     $result = $conn->query($sql);
@@ -38,6 +42,7 @@
     </head>
 
     <body>
+            <script src="script.js"></script> <!-- JS -->
            <div class="head"><br>
                 <div class="adsys">ADMIN SYSTEM</div>
            </div>
@@ -115,7 +120,7 @@
                                     <td>".$crust."</td>
                                     <td>".$topping."</td>
                                     <td>".$row['summary']."</td>
-                                </tr>";
+                                </tr></div>";
                             // echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
                             $sum++;
                             echo "<br><br><br>";
@@ -128,36 +133,30 @@
                 ?>
                 <br><br><br><br>
                 <div>
-                    <div>STOCK</div>
-                    <div>CHEESE</div>
-                    <select class="stock_cheese">
-                            <div class="connn">
-                                <option value='in' <?php $_SESSION['stock_cheese'] = 'in'; ?>>IN STOCK</option>
-                                <option value='out' <?php $_SESSION['stock_cheese'] = 'out'; ?>>OUT OF STOCK</option>
-                            </div>
-                    </select>
-
-                    <?php echo $_SESSION['stock_cheese'];?>
-
-                    <div>HAM</div>
-                    <select class="stock_ham">
-                            <div class="connn">
-                                <option value='in'>IN STOCK</option>
-                                <option value='out'>OUT OF STOCK</option>
-                            </div>
-                    </select>
-
-                    <?php echo $_SESSION['stock_ham'];?>
-
-                    <div>PEPPERONI</div>
-                    <select class="stock_pep">
-                            <div class="connn">
-                                <option value='in'>IN STOCK</option>
-                                <option value='out'>OUT OF STOCK</option>
-                            </div>
-                    </select>
-
-                    <?php echo $_SESSION['stock_pep'];?>
+                    <div>stock pepperoni</div>
+                    <form method='post'>
+                        <select class="stock_pep" name="stock_pep" onchange="this.form.submit()">
+                            <option >กรุณาเลือก</option>
+                            <option value='out'>ปิด</option>
+                            <option value='in'>เปิด</option>
+                        </select>
+                    </form>
+                    <div>stock ham</div>
+                    <form method='post'>
+                        <select class="stock_ham" name="stock_ham" onchange="this.form.submit()">
+                            <option >กรุณาเลือก</option>
+                            <option value='out'>ปิด</option>
+                            <option value='in'>เปิด</option>
+                        </select>
+                    </form>
+                    <div>stock cheese</div>
+                    <form method='post'>
+                        <select class="stock_cheese" name="stock_cheese" onchange="this.form.submit()">
+                            <option >กรุณาเลือก</option>
+                            <option value='out'>ปิด</option>
+                            <option value='in'>เปิด</option>
+                        </select>
+                    </form>
                 </div>
            </div> 
     </body>

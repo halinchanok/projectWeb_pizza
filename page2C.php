@@ -197,10 +197,13 @@
                 <div class="contop">
                 <div class="radio-inputs">
                 <?php
+                    require 'connection.php';
                     $select1 = "SELECT topping_stock FROM topping WHERE topping_id = 'T01'";
                     $res = $conn->query($select1); // ดึงข้อมูลจากฐานข้อมูล
                     $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
-                    if ($row['topping_stock'] > 0) {
+                    if($_SESSION['stock_pep'] == 'out'){
+
+                    }else if (($row['topping_stock'] > 0 )) {
                         echo    "<label>";
                         echo    "<input class='radio-input' type='radio' name='order_topping' value='pepperoni'>";
                         echo    "<span class='radio-tile' >";
@@ -212,7 +215,9 @@
                     $select2 = "SELECT topping_stock FROM topping WHERE topping_id = 'T02'";
                     $res = $conn->query($select2); // ดึงข้อมูลจากฐานข้อมูล
                     $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
-                    if ($row['topping_stock'] > 0) {
+                    if($_SESSION['stock_ham'] == 'out'){
+
+                    }else if ($row['topping_stock'] > 0) {
                         echo    "<label>";
                         echo    "<input class='radio-input' type='radio' name='order_topping' value='ham' >";
                         echo    "<span class='radio-tile' >";
@@ -224,7 +229,9 @@
                     $select = "SELECT topping_stock FROM topping WHERE topping_id = 'T03'";
                     $res = $conn->query($select); // ดึงข้อมูลจากฐานข้อมูล
                     $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
-                    if ($row['topping_stock'] > 0) {
+                    if($_SESSION['stock_cheese'] == 'out'){
+
+                    }else if ($row['topping_stock'] > 0) {
                         echo    "<label>";
                         echo    "<input class='radio-input' type='radio' name='order_topping' value='cheese'>";
                         echo    "<span class='radio-tile' >";
