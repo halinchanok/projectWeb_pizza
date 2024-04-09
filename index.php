@@ -2,13 +2,14 @@
     session_start();
 
     $_SESSION['language'] = 'en';
-
+    if(isset($_GET['lang'])) {
+        // เซ็ตค่าภาษาใน session
+        $_SESSION['language'] = $_GET['lang'];
+    }
     if(isset($_SESSION['language'])){
-        $language = $_SESSION['language'];
-
-        if($language == 'th'){
+        if($_SESSION['language'] == 'th'){
             require 'lang_th.php';
-        }else if($language == 'en'){
+        }else if($_SESSION['language'] == 'en'){
             require 'lang_en.php';
         }
     }

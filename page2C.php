@@ -1,13 +1,12 @@
 <?php
     require 'connection.php';
-    // require 'lang_page2.php';
     session_start();
 
+    // เปลี่ยนภาษา
     if(isset($_GET['lang'])) {
         // เซ็ตค่าภาษาใน session
         $_SESSION['language'] = $_GET['lang'];
     }
-
     if(isset($_SESSION['language'])){
         if($_SESSION['language'] == 'th'){
             require 'lang_th.php';
@@ -234,7 +233,7 @@
             <br><br>
             <div class="cart22_container">
                 <div class="cart22_header">
-                    <div class="center"><?php echo $lang_item; ?></div>
+                    <div class="center"><?php echo $lang["Items in the cart"]; ?></div>
                     <div class='left'>-----------------------------------------------------</div><br>
                 </div>
                     <!-- สรุปหน้า ออเดอร์ -->
@@ -243,16 +242,16 @@
                     <br><br><br>
                     <?php
                         if(($_SESSION['order_1']['size'] == true) && ($_SESSION['order_2']['size'] == true)){
-                            echo "<div class='right'>2 ". $lang_pieces ."</div><br>";
-                            echo "<div class='right'>".$lang_total."</div>";
-                            echo "<div class='right'>฿". $_SESSION['sum_price'] .".00</div>";
+                            echo "<div class='right'>2 ". $lang["pieces"] ."</div><br>";
+                            echo "<div class='right'>".$lang["Total price"]."</div>";
+                            echo "<div class='right'>฿". $_SESSION['order_1']['sum_price']+$_SESSION['order_2']['sum_price'] .".00</div>";
                         }else if(($_SESSION['order_1']['size'] == true) && ($_SESSION['order_2']['size'] == false)){
-                            echo "<div class='right'>1 ". $lang_pieces ."</div><br>";
-                            echo "<div class='right'>".$lang_total."</div>";
+                            echo "<div class='right'>1 ". $lang["pieces"] ."</div><br>";
+                            echo "<div class='right'>".$lang["Total price"]."</div>";
                             echo "<div class='right'>฿". $_SESSION['sum_price'] .".00</div>";
                         }else{
-                            echo "<div class='right'>0 ". $lang_pieces ."</div><br>";
-                            echo "<div class='right'>".$lang_total."</div>";
+                            echo "<div class='right'>0 ". $lang["pieces"] ."</div><br>";
+                            echo "<div class='right'>".$lang["Total price"]."</div>";
                             echo "<div class='right'>฿0.00</div>";
                         }
                     ?>
@@ -269,7 +268,7 @@
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
                         <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
                         </svg>
-                        <?php echo  $lang_pay; ?>
+                        <?php echo  $lang["PAYMENT"]; ?>
                     </button>
             </div>
         </div>
