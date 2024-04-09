@@ -568,3 +568,13 @@ body {
 	font-weight: bolder;
 	color: rgb(21, 54, 137);
   }
+
+  .flag, .flagen {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* ทำให้รูปภาพเป็นรูปวงกลม */
+}
+
+.flag:hover, .flagen:hover {
+    border: 2px solid blue; /* ปรับสีของกรอบเมื่อเม้าส์ Hover ไปที่รูปภาพ */
+}
