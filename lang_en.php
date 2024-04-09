@@ -23,7 +23,7 @@
         "pieces" => "pieces",
         "Total price" => "Total price",
         "PAYMENT" => "PAYMENT",
-        "" => "",
+        "TAP TO START"  => "TAP TO START" ,
         "" => "",
         "" => "",
         "" => "",

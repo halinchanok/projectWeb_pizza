@@ -37,7 +37,7 @@
     <!-- <script src = "script.js"></script> -->
     <link rel="stylesheet" href="script.js">
   
-    <div class="Language"> 
+    <!-- <div class="Language"> 
         <form>
             <select name="Language" class="language">
                 <img class="Flag-Thailand" src="images/Flag-Thailand.webp">
@@ -45,10 +45,10 @@
                 <option value="english">EN</option>
             </select>
         </form>
-    </div>
+    </div> -->
     <p class="ItIsPizza">
        <img src="images/page1.png"
     </p>
-    <h1 class="tap-to-start"><?php echo $lang['welcome']; ?></h1>
+    <h1 class="tap-to-start"><?php echo $lang["TAP TO START"]; ?></h1>
 </body>
 </html>
