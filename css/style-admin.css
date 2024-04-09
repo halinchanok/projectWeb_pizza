@@ -143,9 +143,81 @@ body {
 }
 
 .id{
-    margin-left: 50px;
+    margin-left: 5%;
+    position: absolute;
+    margin-top: 1%;
 }
 
 .menu{
     position: absolute;
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+.crust {
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 1%;
+}
+
+.topping {
+    position: absolute;
+    margin-left: 48%;
+    margin-top: 1%;
+}
+
+.sum1 {
+    position: absolute;
+    margin-left: 60%;
+    margin-top: 1%;
+}
+
+.size {
+    position: absolute;
+    margin-left: 28%; 
+    margin-top: 1%;
+}
+
+.sc{
+    margin-left: 11%;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+
+.sh {
+    margin-left: 11%;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+
+.sp {
+    margin-left: 11%;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    margin-top: -5%;
+}
+
+.stock_pep {
+    margin-left: 11%;
+}
+
+.stock_ham {
+    margin-left: 11%;
+}
+
+.stock_cheese {
+    margin-left: 11%;
+}
+
+.orcount {
+    text-align: center;
+    font-size: 80px;
+}
+
+.oramount{
+    text-align: center;
+    font-size: 80px;
 }

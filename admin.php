@@ -51,12 +51,12 @@
                 <div class="a">
                     <div class="Orderquantity">Order quantity</div>
                     <!-- จำนวนออเดอร์ที่สั่ง (ตกแต่งตรงนี้ได้เลย) -->
-                    <div><?php echo $sum; ?></div>
+                    <div  class='orcount'><?php echo $sum; ?></div>
                 </div>
                 <div class="b">
                     <div class="Totalamount">Total amount</div>
                     <!-- จำนวนเงินรวม (ตกแต่งตรงนี้ได้เลย)-->
-                    <div> <?php echo $summary; ?> </div>
+                    <div class='oramount'> <?php echo $summary; ?> </div>
                 </div>
            </div>
            
@@ -116,10 +116,10 @@
                             echo "<tr>
                                     <td><div class='id'>".$row['order_id'] ."</div></td>
                                     <td><div class='menu'>".$menu."</div></td>
-                                    <td><div class='id'>".$row['size']."</div></td>
-                                    <td><div class='id'>".$crust."</div></td>
-                                    <td><div class='id'>".$topping."</div></td>
-                                    <td><div class='id'>".$row['summary']."</div></td>
+                                    <td><div class='size'>".$row['size']."</div></td>
+                                    <td><div class='crust'>".$crust."</div></td>
+                                    <td><div class='topping'>".$topping."</div></td>
+                                    <td><div class='sum1'>".$row['summary']."</div></td>
                                 </tr></div>";
                             // echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
                             $sum++;
@@ -133,7 +133,7 @@
                 ?>
                 <br><br><br><br>
                 <div>
-                    <div>stock pepperoni</div>
+                    <div class='sp'>stock pepperoni</div>
                     <form method='post'>
                         <select class="stock_pep" name="stock_pep" onchange="this.form.submit()">
                             <option >กรุณาเลือก</option>
@@ -141,7 +141,7 @@
                             <option value='in'>เปิด</option>
                         </select>
                     </form>
-                    <div>stock ham</div>
+                    <div class='sh'>stock ham</div>
                     <form method='post'>
                         <select class="stock_ham" name="stock_ham" onchange="this.form.submit()">
                             <option >กรุณาเลือก</option>
@@ -149,7 +149,7 @@
                             <option value='in'>เปิด</option>
                         </select>
                     </form>
-                    <div>stock cheese</div>
+                    <div class='sc'>stock cheese</div>
                     <form method='post'>
                         <select class="stock_cheese" name="stock_cheese" onchange="this.form.submit()">
                             <option >กรุณาเลือก</option>
