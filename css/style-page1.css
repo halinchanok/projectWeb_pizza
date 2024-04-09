@@ -519,5 +519,52 @@ body {
 
   }
 
-
   
+  .lang{
+	position: absolute;
+  }
+  .flag {
+	display: block;
+  	height: auto;
+	width: 50px;
+	position: absolute;
+	margin-top: -13%;
+	margin-left: 95%;
+	z-index: 0;
+  }
+
+  .th {
+	position: absolute;
+  	margin-top: 0px;
+	margin-left: 243px;
+  	z-index: 1;
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bolder;
+	color: rgb(21, 54, 137);
+  }
+
+  .lang {
+	position: absolute;
+	margin-top: -190px;
+	margin-left: 80%;
+  }
+
+  .flagen {
+	display: block;
+  	height: auto;
+	width: 62px;
+	position: absolute;
+	margin-top: -13%;
+	margin-left: 90%;
+	z-index: 0;
+  }
+
+  .en{
+	position: absolute;
+  	margin-top: 0px;
+	margin-left: 173px;
+  	z-index: 1;
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: bolder;
+	color: rgb(21, 54, 137);
+  }

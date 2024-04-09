@@ -55,9 +55,19 @@
         <IMG class="HEAD" src="images/menu.png">
 
         <!-- ปุ่มเปลี่ยนภาษา -->
-        <a href="?lang=en">en</a>
-        <a href="?lang=th">th</a>
+        <div class="lang">
+            <a class="th" href="?lang=th">TH</a>   
+        </div>
 
+        <div class="conflag"> 
+            <img class="flag"src="images/Flag-Thailand.webp">
+        </div>
+        <div class="lang">
+            <a class="en" href="?lang=en">EN</a>
+        </div>
+        <div class="conflag"> 
+            <img class="flagen" src="images/eng.png">
+        </div>
 
         <!-- เลือกหน้าพิซซ่า -->
         <div class="container">
