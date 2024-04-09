@@ -104,6 +104,30 @@
                     }
                     $conn->close();
                 ?>
+                <div>STOCK</div>
+                <div>CHEESE</div>
+                <select class="stock">
+                        <div class="connn">
+                            <option>IN STOCK</option>
+                            <option>OUT OF STOCK</option>
+                        </div>
+                </select>
+
+                <div>HAM</div>
+                <select class="stock">
+                        <div class="connn">
+                            <option>IN STOCK</option>
+                            <option>OUT OF STOCK</option>
+                        </div>
+                </select>
+
+                <div>PEPPERONI</div>
+                <select class="stock">
+                        <div class="connn">
+                            <option>IN STOCK</option>
+                            <option>OUT OF STOCK</option>
+                        </div>
+                </select>
            </div> 
     </body>
 </html> 
