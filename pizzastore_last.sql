@@ -41,14 +41,10 @@ insert into topping(topping_id, topping_name, topping_price, topping_stock) valu
 insert into topping(topping_id, topping_name, topping_price, topping_stock) value('T03', 'pepperoni', 40, 50);
 insert into topping(topping_id, topping_name, topping_price, topping_stock) value('null', 'null', 0, 0);
 
-create table orders(
-	order_id int not null primary key,
-    order_item int(100) not null,
-    order_price int not null
-);
+
 
 create table orderPizza(
-	order_id int,
+	order_id int(100) not null primary key,
     menu_id varchar(3) not null,
     size varchar(1) not null,
     amount int not null,
@@ -56,13 +52,10 @@ create table orderPizza(
     topping_id varchar(3) not null,
     summary int not null,
     status_order varchar(20),
-    foreign key (order_id) references orders(order_id),
     foreign key (menu_id) references menu(menu_id),
     foreign key (size) references size(size),
     foreign key (crust_id) references crust(crust_id),
     foreign key (topping_id) references topping(topping_id)
 );
-
-
 
 

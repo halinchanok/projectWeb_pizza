@@ -145,17 +145,34 @@
                 <!-- เลือก size -->
                 <div class="consize">
                     <h1 class="size"><?php echo $lang['SIZE']; ?></h1>
-                    <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
-                    <input class="s1" type="radio" class="size-s" id="size-S" name="order_size" value="S" required>
-                    <label class="s" for="size-s">S</label>
-                    <br>
-                    <br>
-                    <input class="m1" type="radio" id="size-M" name="order_size" value="M" required>
-                    <label class="m" for="size-m">M</label>
-                    <br>
-                    <br>
-                    <input class="l1" type="radio" id="size-L" name="order_size" value="L" required>
-                    <label class="l" for="size-L">L</label>
+                    <?php
+                        $select_S = "SELECT size_stock FROM size WHERE size = 'S'";
+                        $res = $conn->query($select_S); // ดึงข้อมูลจากฐานข้อมูล
+                        $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
+                        if ($row['size_stock'] > 0) {
+                            echo "<input class='s1' type='radio' class='size-s' id='size-S' name='order_size' value='S' required>";
+                            echo "<label class='s' for='size-s'>S</label>";
+                            echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
+                        }
+                        echo "<br><br>";
+                        $select_M = "SELECT size_stock FROM size WHERE size = 'M'";
+                        $res = $conn->query($select_M); // ดึงข้อมูลจากฐานข้อมูล
+                        $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
+                        if ($row['size_stock'] > 0) {
+                            echo "<input class='m1' type='radio' id='size-M' name='order_size' value='M' required>";
+                            echo "<label class='m' for='size-m'>M</label>";
+                            echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
+                        }
+                        echo "<br><br>";
+                        $select_L = "SELECT size_stock FROM size WHERE size = 'L'";
+                        $res = $conn->query($select_L); // ดึงข้อมูลจากฐานข้อมูล
+                        $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
+                        if ($row['size_stock'] > 0) {
+                            echo "<input class='l1' type='radio' id='size-L' name='order_size' value='L' required>";
+                            echo "<label class='l' for='size-L'>L</label>";
+                            echo $row['size_stock']; // แสดงข้อมูลจำนวนสต็อก
+                        }
+                    ?>
                 </div>
                 <br>
 
@@ -175,40 +192,44 @@
                 <!-- เลือกท็อปปิ้ง -->
                 <div class="contop">
                 <div class="radio-inputs">
-
-                <label> 
-                    <input class="radio-input" type="radio" name="order_topping" value="pepperoni">
-                        <span class="radio-tile" >
-                            <span class="radio-icon" >
-                                <img class="PEP" src="images/PEPPERONII.webp" > 
-                            </span>
-                            <span class="radio-label"><?php echo $lang['PEPPERONI']; ?></span>
-                        </span>
-                </label>
-                <br>
-
-                <label>
-                    <input checked="" class="radio-input" type="radio" name="order_topping" value="ham">
-                    <span class="radio-tile">
-                        <span class="radio-icon">
-                            <svg stroke="currentColor" xml:space="preserve" viewBox="0 0 467.168 467.168" id="Capa_1" version="1.1" fill="none">
-                            <img class="HAM" src="images/HAM.webp">
-                        </span>
-                        <span class="radio-label"><?php echo $lang['HAM']; ?></span>
-                    </span>
-                </label>
-                <br>
-
-                <label>
-                    <input class="radio-input" type="radio" name="order_topping" value="cheese">
-                    <span class="radio-tile">
-                        <span class="radio-icon">
-                        <img class="HAM" src="images/CHEESE.webp" >
-                        </span>
-                        <span class="radio-label"><?php echo $lang['CHEESE']; ?></span>
-                    </span>
-                </label>
-
+                <?php
+                    $select1 = "SELECT topping_stock FROM topping WHERE topping_id = 'T01'";
+                    $res = $conn->query($select1); // ดึงข้อมูลจากฐานข้อมูล
+                    $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
+                    if ($row['topping_stock'] > 0) {
+                        echo    "<label>";
+                        echo    "<input class='radio-input' type='radio' name='order_topping' value='pepperoni'>";
+                        echo    "<span class='radio-tile' >";
+                        echo    "<span class='radio-icon' >";
+                        echo    "<img class='PEP' src='images/PEPPERONII.webp' >";
+                        echo    "</span><span class='radio-label'>".$lang['PEPPERONI']."</span></span></label>";
+                        echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
+                    }
+                    $select2 = "SELECT topping_stock FROM topping WHERE topping_id = 'T02'";
+                    $res = $conn->query($select2); // ดึงข้อมูลจากฐานข้อมูล
+                    $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
+                    if ($row['topping_stock'] > 0) {
+                        echo    "<label>";
+                        echo    "<input checked='' class='radio-input' type='radio' name='order_topping' value='ham'>";
+                        echo    "<span class='radio-tile' >";
+                        echo    "<span class='radio-icon' >";
+                        echo    "<img class='HAM' src='images/HAM.webp'>";
+                        echo    "</span><span class='radio-label'>".$lang['HAM']."</span></span></label>";
+                        echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
+                    }
+                    $select3 = "SELECT topping_stock FROM topping WHERE topping_id = 'T03'";
+                    $res = $conn->query($select3); // ดึงข้อมูลจากฐานข้อมูล
+                    $row = $res->fetch_assoc(); // ดึงข้อมูลจากผลลัพธ์ของ query
+                    if ($row['topping_stock'] > 0) {
+                        echo    "<label>";
+                        echo    "<input class='radio-input' type='radio' name='order_topping' value='cheese'>";
+                        echo    "<span class='radio-tile' >";
+                        echo    "<span class='radio-icon' >";
+                        echo    "<img class='HAM' src='images/CHEESE.webp'>";
+                        echo    "</span><span class='radio-label'>".$lang['CHEESE']."</span></span></label>";
+                        echo $row['topping_stock']; // แสดงข้อมูลจำนวนสต็อก
+                    }
+                ?>
                 </div>
                     </div>
 
