@@ -24,8 +24,8 @@
         "Total price" => "Total price",
         "PAYMENT" => "PAYMENT",
         "TAP TO START"  => "TAP TO START" ,
-        "" => "",
-        "" => "",
+        "PROMPT PAY" => "PROMPT PAY",
+        "CASH" => "CASH",
         "" => "",
         "" => ""
     );
