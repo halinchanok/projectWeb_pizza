@@ -121,6 +121,13 @@
                                     <td><div class='topping'>".$topping."</div></td>
                                     <td><div class='sum1'>".$row['summary']."</div></td>
                                     <div class='paid'> Paid </div>
+                                    <td><button class='paid-btn' onclick='changeColor(this)' onclick='changeStatus(this)'>Order</button></td>
+                                    <script>
+                                    function changeColor(button) {
+                                        button.classList.toggle('clicked');
+                                      }
+                                    </script>
+                                    
                                 </tr></div>";
                             // echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
                             $sum++;
