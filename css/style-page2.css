@@ -618,3 +618,21 @@ outline: none;
   }
 }
 
+
+.flag{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* ทำให้รูปภาพเป็นรูปวงกลม */
+  position: absolute;
+  margin-left: 95%;
+}
+.flagen {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* ทำให้รูปภาพเป็นรูปวงกลม */
+  position: absolute;
+  margin-left: 92%;
+}
+.flag:hover, .flagen:hover {
+  border: 2px solid blue; /* ปรับสีของกรอบเมื่อเม้าส์ Hover ไปที่รูปภาพ */
+}

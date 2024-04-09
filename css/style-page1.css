@@ -518,63 +518,22 @@ body {
 	position: absolute;
 
   }
-
-  
-  .lang{
+  .flag{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%; /* ทำให้รูปภาพเป็นรูปวงกลม */
 	position: absolute;
-  }
-  .flag {
-	display: block;
-  	height: auto;
-	width: 50px;
-	position: absolute;
-	margin-top: -13%;
 	margin-left: 95%;
-	z-index: 0;
+	margin-top: -12%;
   }
-
-  .th {
-	position: absolute;
-  	margin-top: 0px;
-	margin-left: 243px;
-  	z-index: 1;
-	font-family: 'Times New Roman', Times, serif;
-	font-weight: bolder;
-	color: rgb(21, 54, 137);
-  }
-
-  .lang {
-	position: absolute;
-	margin-top: -190px;
-	margin-left: 80%;
-  }
-
   .flagen {
-	display: block;
-  	height: auto;
-	width: 62px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%; /* ทำให้รูปภาพเป็นรูปวงกลม */
 	position: absolute;
-	margin-top: -13%;
-	margin-left: 90%;
-	z-index: 0;
+	margin-left: 92%;
+	margin-top: -12%;
   }
-
-  .en{
-	position: absolute;
-  	margin-top: 0px;
-	margin-left: 173px;
-  	z-index: 1;
-	font-family: 'Times New Roman', Times, serif;
-	font-weight: bolder;
-	color: rgb(21, 54, 137);
+  .flag:hover, .flagen:hover {
+	border: 2px solid blue; /* ปรับสีของกรอบเมื่อเม้าส์ Hover ไปที่รูปภาพ */
   }
-
-  .flag, .flagen {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%; /* ทำให้รูปภาพเป็นรูปวงกลม */
-}
-
-.flag:hover, .flagen:hover {
-    border: 2px solid blue; /* ปรับสีของกรอบเมื่อเม้าส์ Hover ไปที่รูปภาพ */
-}

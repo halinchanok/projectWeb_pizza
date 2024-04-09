@@ -188,6 +188,13 @@
     </head>
 
     <body>
+        <div class="conflag"> 
+            <a href="?lang=th"><img class="flagth" src="images/Flag-Thailand.webp" alt="Thai Flag"></a>
+        </div>
+        <div class="conflag"> 
+            <a href="?lang=en"><img class="flagen" src="images/eng.png" alt="English Flag"></a>
+        </div>
+
             <img class="pay" src="images/payment.png">
         <div class="conprom">
             <img class="prom" src="images/cashh.png">
@@ -197,9 +204,7 @@
         </div>
 
         <!-- ปุ่มเปลี่ยนภาษา -->
-        <a href="?lang=en">en</a>
-        <a href="?lang=th">th</a>
-
+        
         <form method="post"  action='page4.php'>
         <button type="submit" name="submit" class="btnprom" id="p4" >
         <script>
