@@ -1,5 +1,17 @@
 <?php
-    require 'lang_page1.php';
+    session_start();
+
+    $_SESSION['language'] = 'en';
+
+    if(isset($_SESSION['language'])){
+        $language = $_SESSION['language'];
+
+        if($language == 'th'){
+            require 'lang_th.php';
+        }else if($language == 'en'){
+            require 'lang_en.php';
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -28,14 +40,14 @@
         <form>
             <select name="Language" class="language">
                 <img class="Flag-Thailand" src="images/Flag-Thailand.webp">
-                <option value="thai">TH</option>
-                <option value="emglish">EN</option>
+                <option value="thai" >TH</option>
+                <option value="english">EN</option>
             </select>
         </form>
     </div>
     <p class="ItIsPizza">
        <img src="images/page1.png"
     </p>
-    <h1 class="tap-to-start">TAP TO START</h1>
+    <h1 class="tap-to-start"><?php echo $lang['welcome']; ?></h1>
 </body>
 </html>

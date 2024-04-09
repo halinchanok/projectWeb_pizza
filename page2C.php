@@ -1,7 +1,20 @@
 <?php
     require 'connection.php';
-    require 'lang_page2.php';
+    // require 'lang_page2.php';
     session_start();
+
+    if(isset($_GET['lang'])) {
+        // เซ็ตค่าภาษาใน session
+        $_SESSION['language'] = $_GET['lang'];
+    }
+
+    if(isset($_SESSION['language'])){
+        if($_SESSION['language'] == 'th'){
+            require 'lang_th.php';
+        }else if($_SESSION['language'] == 'en'){
+            require 'lang_en.php';
+        }
+    }
 
     // รับค่าที่ส่งมาจาก form
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -102,8 +115,8 @@
         <script src="script.js"></script><!-- JS -->
         
         <!-- ปุ่มเปลี่ยนภาษา -->
-        <a href="page2.php?lang=en">en</a>
-        <a href="page2.php?lang=th">th</a>
+        <a href="?lang=en">en</a>
+        <a href="?lang=th">th</a>
 
         <a href="page1_menu.php" target="_self">
             <button class="BACK">back</button>
@@ -116,12 +129,12 @@
                 <select class="Pizza" id="order_name" name="order_name" onchange="changeImage()">
                 <div class="container21">
                   <div class="C">
-                    <option class="img" value="images/Double pepperoni.webp"><?php echo $lang_pepperoni; ?></option>
-                    <option class="img" value="images/cheese pizza.webp"><?php echo $lang_cheese; ?></option>
-                    <option class="img" value="images/HAM&C.webp"><?php echo $lang_ham; ?></option>
-                    <option class="img" value="images/TOM YUM KUNG.webp"><?php echo $lang_tomyum; ?></option>
-                    <option class="img" value="images/MEAT DELUXE.webp"><?php echo $lang_deluxe; ?></option>
-                    <option class="img" value="images/SEAFOOD DELUXE.webp"><?php echo $lang_seafood; ?></option>
+                    <option class="img" value="images/Double pepperoni.webp"><?php echo $lang['DOUBLE PEPPERONI']; ?></option>
+                    <option class="img" value="images/cheese pizza.webp"><?php echo $lang['CHEESE PIZZA']; ?></option>
+                    <option class="img" value="images/HAM&C.webp"><?php echo $lang['HAM&CRAB STICKS']; ?></option>
+                    <option class="img" value="images/TOM YUM KUNG.webp"><?php echo $lang['TOM YUM KUNG']; ?></option>
+                    <option class="img" value="images/MEAT DELUXE.webp"><?php echo $lang['MEAT DELUXE']; ?></option>
+                    <option class="img" value="images/SEAFOOD DELUXE.webp"><?php echo $lang['SEAFOOD DELUXE']; ?></option>
                  </div>
                 </div>
                 </select>
@@ -132,7 +145,7 @@
 
                 <!-- เลือก size -->
                 <div class="consize">
-                    <h1 class="size"><?php echo $lang_size; ?></h1>
+                    <h1 class="size"><?php echo $lang['SIZE']; ?></h1>
                     <!-- type redio ต้องกำหนดให้ name เหมือนกัน -->
                     <input class="s1" type="radio" class="size-s" id="size-S" name="order_size" value="S" required>
                     <label class="s" for="size-s">S</label>
@@ -150,12 +163,12 @@
                 <!-- เลือกขอบ -->
                 <div class="concrust">
                 <br>
-                <h1 class="crust"><?php echo $lang_crust; ?></h1>
+                <h1 class="crust"><?php echo $lang['CRUST']; ?></h1>
                 <select class="edge" name="order_crust">
-                    <option value='Pan Crust'><?php echo $lang_pan; ?></option>
-                    <option value='Crispy Thin'><?php echo $lang_crispy; ?></option>
-                    <option value='Cheese Crust'><?php echo $lang_cheese; ?></option>
-                    <option value='Sausage&Cheese Crust'><?php echo $lang_sau; ?></option>
+                    <option value='Pan Crust'><?php echo $lang['PAN CRUST']; ?></option>
+                    <option value='Crispy Thin'><?php echo $lang['CRISPY THIN']; ?></option>
+                    <option value='Cheese Crust'><?php echo $lang['CHEESE CRUST']; ?></option>
+                    <option value='Sausage&Cheese Crust'><?php echo $lang['SAUSAGE&CHEESE CRUST']; ?></option>
                 </select>
                 </div>
                 <br><br>
@@ -170,7 +183,7 @@
                             <span class="radio-icon" >
                                 <img class="PEP" src="images/PEPPERONII.webp" > 
                             </span>
-                            <span class="radio-label"><?php echo $lang_pepperoni; ?></span>
+                            <span class="radio-label"><?php echo $lang['PEPPERONI']; ?></span>
                         </span>
                 </label>
                 <br>
@@ -182,7 +195,7 @@
                             <svg stroke="currentColor" xml:space="preserve" viewBox="0 0 467.168 467.168" id="Capa_1" version="1.1" fill="none">
                             <img class="HAM" src="images/HAM.webp">
                         </span>
-                        <span class="radio-label"><?php echo $lang_ham; ?></span>
+                        <span class="radio-label"><?php echo $lang['HAM']; ?></span>
                     </span>
                 </label>
                 <br>
@@ -193,7 +206,7 @@
                         <span class="radio-icon">
                         <img class="HAM" src="images/CHEESE.webp" >
                         </span>
-                        <span class="radio-label"><?php echo $lang_cheese2; ?></span>
+                        <span class="radio-label"><?php echo $lang['CHEESE']; ?></span>
                     </span>
                 </label>
 
@@ -202,15 +215,15 @@
 
                     <div class="containerP22">
                     <!-- ปุ่มเลือกเมนูเพิ่ม -->
-                    <button class="ADD" >add</button>
+                    <button class="ADD" ><?php echo $lang['ADD']; ?></button>
 
                     <!-- ปุ่มล้างข้อมูล -->
-                    <button class="RESET" type="reset">clear</button>
+                    <button class="RESET" type="reset"><?php echo $lang['CLEAR']; ?></button>
 
                     <!-- ปุ่มยืนยัน -->
                     </div>
                     <div id="main">
-                        <button class="openbtn" type="submit" onclick="openNav()" methode="ch">&#9776; <?php echo $lang_order; ?></button>
+                        <button class="openbtn" type="submit" onclick="openNav()" methode="ch">&#9776; <?php echo $lang['ORDER SUMMARY']; ?></button>
                     </div>
         
             </form>
