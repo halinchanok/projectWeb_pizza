@@ -185,11 +185,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>page3</title>
         <link rel="stylesheet" href="css/style-page3.css"> <!-- CSS -->
+        <link rel="stylesheet" href="css/style-page2.css">
     </head>
 
     <body>
+        <!-- ปุ่มเปลี่ยนภาษา -->
         <div class="conflag"> 
-            <a href="?lang=th"><img class="flagth" src="images/Flag-Thailand.webp" alt="Thai Flag"></a>
+            <a href="?lang=th"><img class="flag" src="images/Flag-Thailand.webp" alt="Thai Flag"></a>
         </div>
         <div class="conflag"> 
             <a href="?lang=en"><img class="flagen" src="images/eng.png" alt="English Flag"></a>
@@ -203,7 +205,7 @@
             <img class="cash" src="images/cashhh.png">
         </div>
 
-        <!-- ปุ่มเปลี่ยนภาษา -->
+        
         
         <form method="post"  action='page4.php'>
         <button type="submit" name="submit" class="btnprom" id="p4" >
