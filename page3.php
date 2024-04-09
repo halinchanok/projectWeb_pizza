@@ -96,7 +96,6 @@
 
             $summary = $_SESSION['order_1']['sum_price'];
             $status = "unpay";
-            echo $order_id." ".$menu_id." ".$size." ".$crust_id." ".$topping_id." ".$summary." ".$status;
             $query1 = "INSERT INTO orderpizza VALUES ('$order_id', '$menu_id', '$size', '$crust_id', '$topping_id', '$summary', '$status')";
             mysqli_query($conn, $query1);
         }
