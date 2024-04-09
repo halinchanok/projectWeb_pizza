@@ -120,6 +120,7 @@
                                     <td><div class='crust'>".$crust."</div></td>
                                     <td><div class='topping'>".$topping."</div></td>
                                     <td><div class='sum1'>".$row['summary']."</div></td>
+                                    <div class='paid'> Paid </div>
                                 </tr></div>";
                             // echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
                             $sum++;

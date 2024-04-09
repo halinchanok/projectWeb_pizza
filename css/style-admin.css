@@ -221,3 +221,9 @@ body {
     text-align: center;
     font-size: 80px;
 }
+
+.paid {
+    position: absolute;
+    margin-left: 75%;
+    margin-top: 1%;
+}
