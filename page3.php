@@ -1,27 +1,82 @@
 <?php
     require 'connection.php';
+    session_start();
 
+    
     if(isset($_POST["submit"])){
         $sql = "SELECT * FROM orderpizza";
         $result = $conn->query($sql);
         $order_id = ($result->num_rows) + 1;
 
-        if(isset($_SESSION['order_1']['size']) == true){
-            $menu_id = $_SESSION['order_1']['menu']; 
-            $size = $_SESSION['order_1']['size']; 
-            $crust_id = $_SESSION['order_1']['crust']; 
-            $topping_id = $_SESSION['order_1']['topping']; 
-            $summary = $_SESSION['order_1']['sum_price'];
-            $status = "unpay";
-
-            $query = "INSERT INTO orderpizza VALUES ('$order_id', '$menu_id', '$size', '$crust_id', '$topping_id', '$summary', '$status')";
-            mysqli_query($conn, $query);
+        if(strcmp($_SESSION['order_1']['menu'], "CHEESE PIZZA") == 0){
+            $menu_id = 'M01';
+        }else if($_SESSION['order_1']['menu'] == "DOUBLE PEPPERONI"){
+            $menu_id = 'M02';
+        }else if($_SESSION['order_1']['menu'] == "HAM&CRAB STICKS"){
+            $menu_id = 'M03';
+        }else if($_SESSION['order_1']['menu'] == "MEAT DELUXE"){
+            $menu_id = 'M04';
+        }else if($_SESSION['order_1']['menu'] == "TOM YUM KUNG"){
+            $menu_id = 'M05';
+        }else if($_SESSION['order_1']['menu'] == "SEAFOOD DELUXE"){
+            $menu_id = 'M06';
         }
+
+        $size = $_SESSION['order_1']['size']; 
+
+        if($_SESSION['order_1']['topping'] == 'cheese'){
+            $topping_id = 'T01';
+        }if($_SESSION['order_1']['topping'] == 'ham'){
+            $topping_id = 'T02';
+        }else $topping_id = 'T03';
+
+        
+        if($_SESSION['order_1']['crust'] == 'Pan Crust'){
+            $crust_id = 'C01';
+        }if($_SESSION['order_1']['crust'] == 'Crispy Thin'){
+            $crust_id = 'C02';
+        }if($_SESSION['order_1']['crust'] == 'Cheese Crust'){
+            $crust_id = 'C03';
+        }else $crust_id = 'C04';
+
+        $summary = $_SESSION['order_1']['sum_price'];
+        $status = "unpay";
+
+        $query = "INSERT INTO orderpizza VALUES ('$order_id', '$menu_id', '$size', '$crust_id', '$topping_id', '$summary', '$status')";
+        mysqli_query($conn, $query);
+
         if(isset($_SESSION['order_2']['size']) == true){
-            $menu_id = $_SESSION['order_2']['menu']; 
+            if(strcmp($_SESSION['order_2']['menu'], "CHEESE PIZZA") == 0){
+                $menu_id = 'M01';
+            }else if($_SESSION['order_2']['menu'] == "DOUBLE PEPPERONI"){
+                $menu_id = 'M02';
+            }else if($_SESSION['order_2']['menu'] == "HAM&CRAB STICKS"){
+                $menu_id = 'M03';
+            }else if($_SESSION['order_2']['menu'] == "MEAT DELUXE"){
+                $menu_id = 'M04';
+            }else if($_SESSION['order_2']['menu'] == "TOM YUM KUNG"){
+                $menu_id = 'M05';
+            }else if($_SESSION['order_2']['menu'] == "SEAFOOD DELUXE"){
+                $menu_id = 'M06';
+            }
+
             $size = $_SESSION['order_2']['size']; 
-            $crust_id = $_SESSION['order_2']['crust']; 
-            $topping_id = $_SESSION['order_2']['topping']; 
+
+            if($_SESSION['order_2']['topping'] == 'cheese'){
+                $topping_id = 'T01';
+            }if($_SESSION['order_2']['topping'] == 'ham'){
+                $topping_id = 'T02';
+            }else $topping_id = 'T03';
+
+            
+            if($_SESSION['order_2']['crust'] == 'Pan Crust'){
+                $crust_id = 'C01';
+            }if($_SESSION['order_2']['crust'] == 'Crispy Thin'){
+                $crust_id = 'C02';
+            }if($_SESSION['order_2']['crust'] == 'Cheese Crust'){
+                $crust_id = 'C03';
+            }else $crust_id = 'C04';
+            
             $summary = $_SESSION['order_2']['sum_price'];
             $status = "unpay";
 

@@ -1,3 +1,19 @@
+<?php
+    require 'connection.php';
+    $sql = "SELECT * FROM orderpizza";
+    $result = $conn->query($sql);
+
+    // คำนวณเงินรวมที่ขายได้
+    $summary = 0;
+    while($row=$result->fetch_assoc()){
+        $summary += $row['summary'];
+    }          
+    
+    // จำนวนออเดอร์ที่ขายได้
+    $sum = $result->num_rows;
+
+    $conn->close();
+?>
 
 <!DOCTYPE html>
 <html lang="th">
@@ -16,19 +32,13 @@
            <div class="sum">
                 <div class="a">
                     <div class="Orderquantity">Order quantity</div>
-                    <!-- จำนวนออเดอร์ที่สั่ง -->
-                    <?php
-                        require 'connection.php';
-                        $sql = "SELECT * FROM orderpizza";
-                        $result = $conn->query($sql);
-
-                        $sum = $result->num_rows;
-                        echo $sum;
-                        $conn->close();
-                    ?>
+                    <!-- จำนวนออเดอร์ที่สั่ง (ตกแต่งตรงนี้ได้เลย) -->
+                    <div><?php echo $sum; ?></div>
                 </div>
                 <div class="b">
-                <div class="Totalamount">Total amount</div>
+                    <div class="Totalamount">Total amount</div>
+                    <!-- จำนวนเงินรวม (ตกแต่งตรงนี้ได้เลย)-->
+                    <div> <?php echo $summary; ?> </div>
                 </div>
            </div>
            
@@ -82,7 +92,10 @@
                             }else if($row['topping_id'] == 'T01'){
                                 $topping = "ham";
                             }else $topping = "pepperoni";
-                            echo "<div>".$row['order_id']." ".$menu." ".$row['size']." ".$crust." ".$topping." ".$row['summary'].$row['status']."</div>";
+
+                            // ออมสินตกแต่งตรงนี้ได้
+                            echo "<div>".$row['order_id']." ".$menu." ".$row['size']." ".$crust." ".$topping." ".$row['summary'] ." <div>". $row['status_order']."</div></div>";
+                            
                             echo "-------------------------------------------------------------------------------------";
                             $sum++;
                         }
