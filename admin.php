@@ -1,5 +1,18 @@
 <?php
     require 'connection.php';
+    session_start();
+
+    $_SESSION['stock_cheese'] = 'in';
+    $_SESSION['stock_pep'] = 'in';
+    $_SESSION['stock_ham'] = 'in';
+
+    // เปลี่ยนค่า session เมื่อมีการเลือก option ใหม่
+    if(isset($_POST['selected_option'])) {
+        $_SESSION['stock_cheese'] = $_POST['selected_option'];
+        $_SESSION['stock_pep'] = $_POST['selected_option'];
+        $_SESSION['stock_ham'] = $_POST['selected_option'];
+    }
+
     $sql = "SELECT * FROM orderpizza";
     $result = $conn->query($sql);
 
@@ -94,7 +107,16 @@
                             }else $topping = "pepperoni";
 
                             // ออมสินตกแต่งตรงนี้ได้
-                            echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
+                            echo "<div class='bar'>";
+                            echo "<tr>
+                                    <td>".$row['order_id'] ."</td>
+                                    <td>".$menu."</td>
+                                    <td>".$row['size']."</td>
+                                    <td>".$crust."</td>
+                                    <td>".$topping."</td>
+                                    <td>".$row['summary']."</td>
+                                </tr>";
+                            // echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
                             $sum++;
                             echo "<br><br><br>";
                         }
@@ -104,30 +126,39 @@
                     }
                     $conn->close();
                 ?>
-                <div>STOCK</div>
-                <div>CHEESE</div>
-                <select class="stock">
-                        <div class="connn">
-                            <option>IN STOCK</option>
-                            <option>OUT OF STOCK</option>
-                        </div>
-                </select>
+                <br><br><br><br>
+                <div>
+                    <div>STOCK</div>
+                    <div>CHEESE</div>
+                    <select class="stock_cheese">
+                            <div class="connn">
+                                <option value='in' <?php $_SESSION['stock_cheese'] = 'in'; ?>>IN STOCK</option>
+                                <option value='out' <?php $_SESSION['stock_cheese'] = 'out'; ?>>OUT OF STOCK</option>
+                            </div>
+                    </select>
 
-                <div>HAM</div>
-                <select class="stock">
-                        <div class="connn">
-                            <option>IN STOCK</option>
-                            <option>OUT OF STOCK</option>
-                        </div>
-                </select>
+                    <?php echo $_SESSION['stock_cheese'];?>
 
-                <div>PEPPERONI</div>
-                <select class="stock">
-                        <div class="connn">
-                            <option>IN STOCK</option>
-                            <option>OUT OF STOCK</option>
-                        </div>
-                </select>
+                    <div>HAM</div>
+                    <select class="stock_ham">
+                            <div class="connn">
+                                <option value='in'>IN STOCK</option>
+                                <option value='out'>OUT OF STOCK</option>
+                            </div>
+                    </select>
+
+                    <?php echo $_SESSION['stock_ham'];?>
+
+                    <div>PEPPERONI</div>
+                    <select class="stock_pep">
+                            <div class="connn">
+                                <option value='in'>IN STOCK</option>
+                                <option value='out'>OUT OF STOCK</option>
+                            </div>
+                    </select>
+
+                    <?php echo $_SESSION['stock_pep'];?>
+                </div>
            </div> 
     </body>
 </html> 
