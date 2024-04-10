@@ -183,7 +183,8 @@ body {
     font-size: 30px;
     color: rgb(0, 0, 0);
     font-weight: bolder;
-    
+    position: absolute;
+
 }
 
 .sh {
@@ -191,15 +192,16 @@ body {
     font-size: 30px;
     color: rgb(0, 0, 0);
     font-weight: bolder;
+    position: absolute;
 }
 
 .sp {
-    margin-left: 11%;
+    margin-left: 20%%;
     font-size: 30px;
     color: rgb(0, 0, 0);
     font-weight: bolder;
     margin-top: -5%;
-    
+    position: absolute;
 }
 
 .stock_pep {

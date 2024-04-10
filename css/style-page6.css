@@ -1,0 +1,9 @@
+body {
+    background-color: #D12024;
+}
+.success {
+    width: 75%;
+    margin-left: 12%;
+    position: absolute;
+    margin-top: -5px;
+}
