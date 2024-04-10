@@ -156,7 +156,7 @@
                         }
                         echo "</div>";
                     }else{
-                        echo "0 rows available";
+                        // echo "0 rows available";
                     }
                     $conn->close();
                 ?>
