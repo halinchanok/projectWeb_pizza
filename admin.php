@@ -2,20 +2,24 @@
     require 'connection.php';
     session_start();
 
-    // if($_SERVER["REQUEST_METHOD"] == "POST"){
-    //     if(isset($_POST['stock_pep'])){
-    //         $_SESSION['stock_pep'] = $_POST['stock_pep']; // เก็บค่าที่เลือกใน session
-    //     }
-    //     if(isset($_POST['stock_ham'])){
-    //         $_SESSION['stock_ham'] = $_POST['stock_ham']; // เก็บค่าที่เลือกใน session
-    //     }
-    //     if(isset($_POST['stock_cheese'])){
-    //         $_SESSION['stock_cheese'] = $_POST['stock_cheese']; // เก็บค่าที่เลือกใน session
-    //     }
-    // }
-    echo $_SESSION['stock_pep'];
-    echo $_SESSION['stock_ham'];
-    echo $_SESSION['stock_cheese'];
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(isset($_POST['stock_pep'])){
+            $_SESSION['stock_pep'] = $_POST['stock_pep']; // เก็บค่าที่เลือกใน session
+        }
+        if(isset($_POST['stock_ham'])){
+            $_SESSION['stock_ham'] = $_POST['stock_ham']; // เก็บค่าที่เลือกใน session
+        }
+        if(isset($_POST['stock_cheese'])){
+            $_SESSION['stock_cheese'] = $_POST['stock_cheese']; // เก็บค่าที่เลือกใน session
+        }
+        if(isset($_POST['paid-btn'])){
+            $update_sql = "UPDATE orderpizza SET status_order = 'pay'";
+            $conn->query($update_sql);
+        }
+    }
+    // echo $_SESSION['stock_pep'];
+    // echo $_SESSION['stock_ham'];
+    // echo $_SESSION['stock_cheese'];
 
     $sql = "SELECT * FROM orderpizza";
     $result = $conn->query($sql);
@@ -80,6 +84,7 @@
                     $result = $conn->query($sql);
                     
                     // พิมพ์คำสั่งซื้อแต่ละออเดอร์
+                    $count = 0;
                     if($result->num_rows > 0){
                         while($row=$result->fetch_assoc()){
                             // menu
@@ -112,26 +117,42 @@
                             }else $topping = "pepperoni";
 
                             // ออมสินตกแต่งตรงนี้ได้
-                            echo "<div class='bar'>";
-                            echo "<tr>
-                                    <td><div class='id'>".$row['order_id'] ."</div></td>
-                                    <td><div class='menu'>".$menu."</div></td>
-                                    <td><div class='size'>".$row['size']."</div></td>
-                                    <td><div class='crust'>".$crust."</div></td>
-                                    <td><div class='topping'>".$topping."</div></td>
-                                    <td><div class='sum1'>".$row['summary']."</div></td>
-                                    <div class='paid'> Paid </div>
-                                    <td><button class='paid-btn' onclick='changeColor(this)' onclick='changeStatus(this)'>Order</button></td>
-                                    <script>
-                                    function changeColor(button) {
-                                        button.classList.toggle('clicked');
-                                      }
-                                    </script>
-                                    
-                                </tr></div>";
-                            // echo "<div class='bar'>". $row['order_id'] . $menu . $row['size']. $crust .$topping .$row['summary'] . $row['status_order']."</div>";
-                            $sum++;
-                            echo "<br><br><br>";
+                            if($count != $row['order_id']){
+                                echo "<div class='bar'>";
+                                echo "<tr>
+                                        <td><div class='id'>".$row['order_id'] ."</div></td>
+                                        <td><div class='menu'>".$menu."</div></td>
+                                        <td><div class='size'>".$row['size']."</div></td>
+                                        <td><div class='crust'>".$crust."</div></td>
+                                        <td><div class='topping'>".$topping."</div></td>
+                                        <td><div class='sum1'>".$row['summary']."</div></td>
+                                        <div class='paid'> Paid </div>
+                                        <td><button class='paid-btn' name='paid-btn' onclick='changeColor(this)' onclick='changeStatus(this)'>Order</button></td>
+                                        <script>
+                                        function changeColor(button) {
+                                            button.classList.toggle('clicked');
+                                        }
+                                        </script>
+                                        
+                                    </tr></div>";
+                                $sum++;
+                                echo "<br><br><br>";
+                            }else {
+                                echo "<div class='bar'>";
+                                echo "<tr>
+                                        <td><div class='id'>". " " ."</div></td>
+                                        <td><div class='menu'>".$menu."</div></td>
+                                        <td><div class='size'>".$row['size']."</div></td>
+                                        <td><div class='crust'>".$crust."</div></td>
+                                        <td><div class='topping'>".$topping."</div></td>
+                                        <td><div class='sum1'>".$row['summary']."</div></td>
+                                        <div class='paid'> Paid </div>
+                                        </script>
+                                    </tr></div>";
+                                $sum++;
+                                echo "<br><br><br>";
+                            }
+                            $count = $row['order_id'];
                         }
                         echo "</div>";
                     }else{

@@ -13,6 +13,9 @@
             require 'lang_en.php';
         }
     }
+    // $_SESSION['stock_ham'] = 'in';
+    // $_SESSION['stock_cheese'] = 'in';
+    // $_SESSION['stock_pep'] = 'in';
 ?>
 
 <!DOCTYPE html>
